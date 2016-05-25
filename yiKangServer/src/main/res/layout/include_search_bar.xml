@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="30dp"
+    android:id="@+id/rl_title_bar"
+    android:layout_marginTop="5dp"
+    >
+
+
+    <EditText
+        android:id="@+id/search_et_content"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:drawablePadding="12dp"
+        android:background="@drawable/chatting_setmode_bgk_et"
+        android:drawableLeft="@drawable/yikang_tab_search_info"
+        android:gravity="center_vertical"
+        android:hint="搜索你感兴趣的标签、内容"
+        android:imeOptions="actionSearch"
+        android:paddingLeft="50dp"
+        android:singleLine="true"
+        android:focusable="false"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+
+</RelativeLayout>

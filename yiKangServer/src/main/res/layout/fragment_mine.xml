@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:divider="@drawable/line_grey_horizontal"
+    android:showDividers="middle"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ly_mine_basic_info"
+                style="@style/style_common_item.linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.yikang.app.yikangserver.view.CircleImageView
+                    android:id="@+id/iv_mine_avatar"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:contentDescription="@null"
+                    android:src="@drawable/doctor_default_avatar" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/tv_mine_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="李四"
+                        android:textColor="@color/common_text_color"
+                        android:textSize="15sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="@string/mine_profession"
+                            android:textColor="@color/common_text_grey"
+                            android:textSize="@dimen/common_text_size_small" />
+
+                        <TextView
+                            android:id="@+id/tv_mine_profession"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="康复师"
+                            android:textColor="@color/common_text_grey"
+                            android:textSize="@dimen/common_text_size_small" />
+
+                        <TextView
+                            android:id="@+id/tv_mine_profession_in_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="审核中"
+                            android:textColor="@color/common_theme_color"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="10dp"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:paddingTop="2dp"
+                            android:paddingBottom="2dp"
+                            android:background="@drawable/shape_them_color_radius_rectangle"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@drawable/ic_arrow_right_blue"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ly_invite_code"
+                style="@style/style_common_item.linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:visibility="gone"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/common_text_color"
+                    android:textSize="@dimen/common_text_size"
+                    android:text="@string/mine_invite_code" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/tv_mine_invite_code"
+                    android:textColor="@color/common_text_grey"
+                    android:textSize="@dimen/common_text_size_small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ly_mine_qr_code"
+                style="@style/style_common_item.linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/common_text_color"
+                    android:textSize="@dimen/common_text_size"
+                    android:text="@string/mine_qrcode" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_qr_code"
+                    android:layout_marginRight="10dp"
+                    android:contentDescription="@null"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_arrow_right_grey"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ly_mine_customer_number"
+                style="@style/style_common_item.linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/common_text_size"
+                    android:textColor="@color/common_text_color"
+                    android:text="@string/mine_customer_number" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/tv_mine_customer_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="10dp"
+                    android:textColor="@color/common_text_grey"
+                    android:textSize="@dimen/common_text_size_small"
+                    android:drawableRight="@drawable/ic_arrow_right_grey"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/mine_ly_assessment"
+                style="@style/style_common_item.linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/common_text_size"
+                    android:textColor="@color/common_text_color"
+                    android:drawableLeft="@drawable/yk_mine_tab_assessment"
+                    android:drawablePadding="5dp"
+                    android:text="@string/mine_tv_info_assessment" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/mine_tv_assessment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="10dp"
+                    android:text="未评估"
+                    android:gravity="center"
+                    android:textColor="@color/common_text_grey"
+                    android:textSize="@dimen/common_text_size_small"
+                    android:drawableRight="@drawable/ic_arrow_right_blue"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/mine_ly_invitation"
+                style="@style/style_common_item.linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/common_text_size"
+                    android:textColor="@color/common_text_color"
+                    android:drawableLeft="@drawable/yk_mine_tab_invitation"
+                    android:drawablePadding="5dp"
+                    android:text="@string/mine_tv_info_invitation" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/mine_tv_invitation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="10dp"
+                    android:gravity="center"
+                    android:textColor="@color/common_text_grey"
+                    android:textSize="@dimen/common_text_size_small"
+                    android:drawableRight="@drawable/ic_arrow_right_blue"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/mine_ly_problem"
+                style="@style/style_common_item.linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/common_text_size"
+                    android:textColor="@color/common_text_color"
+                    android:drawableLeft="@drawable/yk_mine_tab_problem"
+                    android:drawablePadding="5dp"
+                    android:text="@string/mine_tv_info_problem" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/mine_tv_problem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="10dp"
+                    android:gravity="center"
+                    android:textColor="@color/common_text_grey"
+                    android:textSize="@dimen/common_text_size_small"
+                    android:drawableRight="@drawable/ic_arrow_right_blue"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/mine_ly_focuson"
+                style="@style/style_common_item.linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/common_text_size"
+                    android:textColor="@color/common_text_color"
+                    android:drawableLeft="@drawable/yk_mine_tab_focuson"
+                    android:drawablePadding="5dp"
+                    android:text="@string/mine_tv_info_focuson" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/mine_tv_focuson"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="10dp"
+                    android:textColor="@color/common_text_grey"
+                    android:textSize="@dimen/common_text_size_small"
+                    android:drawableRight="@drawable/ic_arrow_right_blue"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/mine_ly_service"
+                style="@style/style_common_item.linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/common_text_size"
+                    android:textColor="@color/common_text_color"
+                    android:drawableLeft="@drawable/yk_mine_tab_service"
+                    android:drawablePadding="5dp"
+                    android:text="@string/mine_tv_info_service" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/mine_tv_service"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="10dp"
+                    android:textColor="@color/common_text_grey"
+                    android:textSize="@dimen/common_text_size_small"
+                    android:drawableRight="@drawable/ic_arrow_right_blue"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/mine_ly_fund"
+                style="@style/style_common_item.linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/common_text_size"
+                    android:textColor="@color/common_text_color"
+                    android:drawableLeft="@drawable/yk_mine_tab_fund"
+                    android:drawablePadding="5dp"
+                    android:text="@string/mine_tv_info_fund" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/mine_tv_fund"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="10dp"
+                    android:gravity="center"
+                    android:textColor="@color/common_text_grey"
+                    android:textSize="@dimen/common_text_size_small"
+                    android:drawableRight="@drawable/ic_arrow_right_blue"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/mine_ly_activities"
+                style="@style/style_common_item.linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/common_text_size"
+                    android:textColor="@color/common_text_color"
+                    android:drawableLeft="@drawable/yk_mine_tab_activities"
+                    android:drawablePadding="5dp"
+                    android:text="@string/mine_tv_info_activities" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/mine_tv_activities"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="10dp"
+                    android:gravity="center"
+                    android:textColor="@color/common_text_grey"
+                    android:textSize="@dimen/common_text_size_small"
+                    android:drawableRight="@drawable/ic_arrow_right_blue"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/mine_ly_authentication"
+                style="@style/style_common_item.linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/common_text_size"
+                    android:textColor="@android:color/holo_blue_light"
+                    android:drawableLeft="@drawable/yk_mine_tab_authentication"
+                    android:drawablePadding="5dp"
+                    android:text="@string/mine_tv_info_authentication" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/mine_tv_authentication"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="10dp"
+                    android:gravity="center"
+                    android:text="@string/mine_tv_info_authentication_right"
+                    android:textColor="@color/common_text_grey"
+                    android:textSize="@dimen/common_text_size_small"
+                    android:drawableRight="@drawable/ic_arrow_right_blue"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

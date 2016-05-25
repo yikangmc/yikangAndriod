@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              xmlns:tools="http://schemas.android.com/tools"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:background="@color/common_page_background"
+              android:fitsSystemWindows="true"
+              android:orientation="vertical"
+              tools:context="com.yikang.app.yikangserver.fragment.alter.AlterExpertFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white" >
+
+        <TextView
+            android:id="@+id/lable_choose_cancle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:gravity="center"
+            android:text="取消"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="选择标签"
+            android:gravity="center_vertical"
+            android:textSize="15sp"
+            android:textColor="@color/homepage_lable_blue_little"
+            />
+
+        <TextView
+            android:id="@+id/lable_choose_save"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="8dp"
+            android:gravity="center"
+            android:text="保存 "
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="@dimen/common_text_size"
+        android:text="请选择自己擅长的方向，最多只能选择四项" />
+
+    <com.yikang.app.yikangserver.view.tag.TagFlowLayout
+        android:id="@+id/id_tfl_expert"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        app:max_select="-1"/>
+
+</LinearLayout>

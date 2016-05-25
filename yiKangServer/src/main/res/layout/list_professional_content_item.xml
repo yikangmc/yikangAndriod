@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/main_tab_background_color"
+    android:padding="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/lable_iv_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/yk_homepage_iv_lable"
+            android:padding="8dp"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="5dp">
+            <TextView
+                android:id="@+id/lables_tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="如何让女生正确的运动"
+                android:textSize="18dp"/>
+            <TextView
+                android:id="@+id/lables_tv_tiezi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="践行者工作室"
+                android:layout_marginTop="5dp"
+                android:drawableRight="@drawable/yk_all_tab_unit_kang"
+                android:drawablePadding="3dp"
+                android:textSize="13dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@color/main_background_color"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="is阿打算的撒的大都是靠大家思考绝对进口的,可考虑离开的抵抗力打开里面的路口对面分开打开了"/>
+
+</LinearLayout>

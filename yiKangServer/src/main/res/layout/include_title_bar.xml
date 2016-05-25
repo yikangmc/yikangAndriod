@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:id="@+id/rl_title_bar"
+    android:background="@color/white">
+  
+   <ImageButton 
+       android:id="@+id/ibtn_title_back"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginLeft="5dp"
+       android:paddingLeft="5dp"
+       android:paddingRight="30dp"
+       android:layout_centerVertical="true"
+       android:src="@drawable/ic_arrow_back"
+       android:background="@null"/>
+   
+   <TextView
+       android:id="@+id/tv_title_text" 
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_centerInParent="true"
+       android:text="标题栏"
+       style="@style/style_title_text" />
+   
+    <TextView
+       android:id="@+id/tv_title_right_text"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_alignParentRight="true"
+       android:layout_marginRight="15dp"
+       android:textSize="18sp"
+       android:layout_centerVertical="true"
+       android:textColor="@color/common_theme_color"/>
+
+    <ImageView
+        android:id="@+id/iv_title_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
+        android:layout_marginRight="@dimen/iv_title_right_min_height"
+        android:visibility="gone"
+        android:src="@drawable/ic_setting"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_alignParentBottom="true"
+        android:background="@color/common_page_background"/>
+
+</RelativeLayout>

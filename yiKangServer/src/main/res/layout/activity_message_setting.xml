@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_page_background"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical" >
+
+    <include layout="@layout/include_title_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:paddingLeft="20dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:paddingRight="20dp" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="评论"
+                    android:textColor="@color/homepage_title_top_text_color"
+                    android:textSize="16sp" />
+
+                <CheckBox
+                    android:id="@+id/setting_checkbox_discuss"
+                    style="@style/CustomCheckboxTheme"
+                    android:layout_width="40dp"
+                    android:layout_height="24dp"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:gravity="center_vertical" />
+            </LinearLayout>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:paddingLeft="20dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:paddingRight="20dp" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="支持"
+                    android:textColor="@color/homepage_title_top_text_color"
+                    android:textSize="16sp" />
+
+                <CheckBox
+                    android:id="@+id/setting_checkbox_support"
+                    style="@style/CustomCheckboxTheme"
+                    android:layout_width="40dp"
+                    android:layout_height="24dp"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:gravity="center_vertical" />
+            </LinearLayout>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:paddingLeft="20dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:paddingRight="20dp" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="回答"
+                    android:textColor="@color/homepage_title_top_text_color"
+                    android:textSize="16sp" />
+
+                <CheckBox
+                    android:id="@+id/setting_checkbox_answer"
+                    style="@style/CustomCheckboxTheme"
+                    android:layout_width="40dp"
+                    android:layout_height="24dp"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:gravity="center_vertical" />
+            </LinearLayout>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:paddingLeft="20dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:paddingRight="20dp" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="系统消息"
+                    android:textColor="@color/homepage_title_top_text_color"
+                    android:textSize="16sp" />
+
+                <CheckBox
+                    android:id="@+id/setting_checkbox_system"
+                    style="@style/CustomCheckboxTheme"
+                    android:layout_width="40dp"
+                    android:layout_height="24dp"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:gravity="center_vertical" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

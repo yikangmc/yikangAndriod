@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:divider="@drawable/line_grey_horizontal"
+    android:showDividers="middle"
+    tools:context="com.yikang.app.yikangserver.ui.SettingActivity">
+
+    <include layout="@layout/include_title_bar"/>
+
+
+    <LinearLayout
+        android:id="@+id/ly_setting_version"
+        style="@style/style_common_item.linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/common_text_color"
+            android:textSize="@dimen/common_text_size"
+            android:text="@string/version" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tv_setting_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:textColor="@color/common_text_grey"
+            android:textSize="@dimen/common_text_size_small"
+            android:drawableRight="@drawable/ic_arrow_right_grey" />
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:id="@+id/ly_setting_mark"
+        style="@style/style_common_item.linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/common_text_color"
+            android:textSize="@dimen/common_text_size"
+            android:text="@string/mark_app" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:textColor="@color/common_text_grey"
+            android:textSize="@dimen/common_text_size_small"
+            android:drawableRight="@drawable/ic_arrow_right_grey" />
+    </LinearLayout>
+
+
+
+
+
+    <LinearLayout
+        android:id="@+id/ly_setting_logout"
+        style="@style/style_common_item.linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/common_text_color"
+            android:textSize="@dimen/common_text_size"
+            android:text="@string/logout" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp" />
+    </LinearLayout>
+
+
+</LinearLayout>

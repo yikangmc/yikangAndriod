@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background_color"
+    android:divider="@drawable/line_grey_horizontal"
+    android:orientation="vertical"
+    android:showDividers="middle">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="5dp"
+        android:background="@color/main_tab_background_color"
+        android:orientation="vertical">
+        <com.yikang.app.yikangserver.view.XListView
+            android:id="@+id/community_detals_listview"
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:dividerHeight="0.0dp"
+            android:fadingEdge="none"
+            android:overScrollMode="never"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/lable_details_ll_discuss"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/main_tab_background_color"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="7"
+            android:background="@null"
+            android:drawableBottom="@drawable/yk_all_divider_horizontal"
+            android:drawablePadding="10dp"
+            android:paddingLeft="70dp"
+
+            android:gravity="center|left"
+            android:hint="我来说点有用的好么~~"
+            android:textColorHint="@color/homepage_title_right_text_color"/>
+
+        <ImageView
+            android:id="@+id/lable_details_iv_discuss"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/selector_lable_posting"/>
+    </LinearLayout>
+
+</LinearLayout>

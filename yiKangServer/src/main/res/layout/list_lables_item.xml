@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+              android:gravity="center_vertical"
+    android:background="@color/main_tab_background_color"
+    android:padding="5dp">
+
+    <com.yikang.app.yikangserver.view.CircleImageView
+        android:id="@+id/iv_mine_avatar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:contentDescription="@null"
+        android:src="@drawable/doctor_default_avatar" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:padding="5dp">
+        <TextView
+            android:id="@+id/lables_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="佳佳官方通知"
+            android:textSize="@dimen/common_text_size"
+            android:textColor="@color/homepage_title_left_text_color"/>
+        <TextView
+            android:id="@+id/lables_tv_tiezi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="@dimen/common_text_size_middle"
+            android:textColor="@color/homepage_title_right_text_color"
+            android:text="2016年度康复高峰论坛即将开幕！"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="right"
+
+        android:padding="5dp">
+        <TextView
+            android:id="@+id/lables_tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10天前"
+            android:textSize="@dimen/common_text_size_middle_small"
+            android:textColor="@color/homepage_title_right_text_color"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="143条帖子"
+            android:layout_marginTop="5dp"
+            android:textSize="@dimen/common_text_size_middle_small"
+            android:textColor="@color/community_top_lable_color"
+            android:visibility="invisible"/>
+    </LinearLayout>
+
+</LinearLayout>
