@@ -185,6 +185,11 @@ public class CommunityFoucusFragment extends BaseFragment implements View.OnClic
         }
 
         @Override
+        public void destroyItem(ViewGroup container, int position, Object object) {
+            //super.destroyItem(container, position, object);
+        }
+
+        @Override
         public Fragment getItem(int arg0) {
             return list.get(arg0);
         }

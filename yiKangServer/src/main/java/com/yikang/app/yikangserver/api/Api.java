@@ -10,12 +10,15 @@ import com.yikang.app.yikangserver.api.client.FileRequestParam;
 import com.yikang.app.yikangserver.api.client.RequestParam;
 import com.yikang.app.yikangserver.api.client.ResponseContent;
 import com.yikang.app.yikangserver.application.AppContext;
+import com.yikang.app.yikangserver.bean.BannerBean;
 import com.yikang.app.yikangserver.bean.Department;
 import com.yikang.app.yikangserver.bean.Expert;
 import com.yikang.app.yikangserver.bean.FileResponse;
 import com.yikang.app.yikangserver.bean.HpWonderfulContent;
+import com.yikang.app.yikangserver.bean.LablesBean;
 import com.yikang.app.yikangserver.bean.Order;
 import com.yikang.app.yikangserver.bean.PaintsData;
+import com.yikang.app.yikangserver.bean.TagHot;
 import com.yikang.app.yikangserver.bean.User;
 import com.yikang.app.yikangserver.data.MyData;
 import com.yikang.app.yikangserver.utils.LOG;
@@ -29,15 +32,15 @@ import java.util.Map;
 
 /**
  * 本应用的所有api
- * @author 刘光辉 2016-03-01
+ * @author 郝晓东 2016-05-27
  */
 public class Api {
     /** 中国主机*/
-    private static final String SERVER_HOST = "http://54.223.35.197:8088";
+    //private static final String SERVER_HOST = "http://54.223.35.197:8088";
 
-//    /** 测试主机 */
-//    private static final String SERVER_TEST = "http://54.223.53.20";
-    private static final String SERVER_LOCAL_TEST = "http://192.168.1.18:8088";
+    /** 测试主机 */
+    //private static final String SERVER_TEST = "http://54.223.53.20:8080";
+    private static final String SERVER_TEST = "http://192.168.1.18:8088";
 
     private static final String SERVER_LOCAL_TEST2 = "http://54.223.53.20:8080";
 
@@ -45,9 +48,10 @@ public class Api {
 
     /************* 下面才是基地址 ***********/
     /**接口开发的地址*/
-    public static final String BASE_URL = SERVER_HOST +"/yikangservice/service";
+    public static final String BASE_URL = SERVER_TEST +"/yikangservice/service";
     /*** 文件上传服务器的地址*/
     private static final String BASE_FILE_URL = "http://54.223.35.197:8088/yikangFileManage";
+    //private static final String BASE_FILE_URL ="http://192.168.1.18:8081";
 
 
 
@@ -253,6 +257,9 @@ public class Api {
     }
 
 
+
+
+
     /**
      * 获取用户信息
      *
@@ -304,32 +311,6 @@ public class Api {
         }.getType();
         ApiClient.execute(url, param, callback, type);
     }
-
-    /**
-     * 获取推荐文章列表
-     */
-    public static void getRecognise(ResponseCallback<List<Department>> callback) {
-        String url = SERVER_LOCAL_TEST + "/00-28-01";
-        RequestParam param = new RequestParam();
-        Type type = new TypeToken<ResponseContent<List<Department>>>() {
-        }.getType();
-        ApiClient.execute(url, param, callback, type);
-    }
-
-
-    /**
-     * 根据标签获取文章详情
-     */
-    public static void getContentDetail(int profession,ResponseCallback<List<Department>> callback) {
-        String url = SERVER_LOCAL_TEST + "/00-28-08";
-        RequestParam param = new RequestParam();
-        param.add("formPostId",profession);
-        Type type = new TypeToken<ResponseContent<List<Department>>>() {
-        }.getType();
-        ApiClient.execute(url, param, callback, type);
-    }
-
-
 
     /**
      * 修改名字
@@ -508,8 +489,38 @@ public class Api {
 
     }
 
+
+
     /**
-     * 获取用户信息
+     * 获取首页banner列表
+     *
+     * @param callback
+     */
+    public static void getBannerContent(ResponseCallback<List<BannerBean>> callback) {
+        String url = BASE_URL + "/00-26-01";
+        RequestParam param = new RequestParam();
+        Type type = new TypeToken<ResponseContent<List<BannerBean>>>() {}.getType();
+        LOG.i("debug","type------>"+type);
+        ApiClient.execute(url, param, callback, type);
+    }
+
+
+    /**
+     * 模糊搜索标签列表
+     *
+     * @param callback
+     */
+    public static void getSearchContent(String tagName,ResponseCallback<String> callback) {
+        String url = BASE_URL + "/00-27-01";
+        RequestParam param = new RequestParam();
+        param.add("tagName",tagName);
+        Type type = new TypeToken<ResponseContent<String>>() {}.getType();
+        LOG.i("debug","type------>"+type);
+        ApiClient.execute(url, param, callback, type);
+    }
+
+    /**
+     * 获取首页精彩内容
      *
      * @param callback
      */
@@ -521,6 +532,246 @@ public class Api {
         LOG.i("debug","type------>"+type);
         ApiClient.execute(url, param, callback, type);
     }
+   /* public static void getWonderfulContent(ResponseCallback<String> callback) {
+        String url = BASE_URL + "/00-28-01";
+        RequestParam param = new RequestParam();
+
+        Type type = new TypeToken<ResponseContent<String>>() {}.getType();
+        LOG.i("debug","type------>"+type);
+        ApiClient.execute(url, param, callback, type);
+    }
+*/
+    /**
+     * 首页精彩解答
+     */
+    public static void getWonderfulAnswer(ResponseCallback<String > callback) {
+        String url = BASE_URL + "/00-28-01";
+        RequestParam param = new RequestParam();
+
+        Type type = new TypeToken<ResponseContent<String>>() {}.getType();
+        LOG.i("debug","type------>"+type);
+        ApiClient.execute(url, param, callback, type);
+    }
+
+
+    /**
+     * 获取某一个文章详情
+     *
+     * @param callback
+     */
+    public static void getDetailContent(int id,ResponseCallback<HpWonderfulContent> callback) {
+        String url = BASE_URL + "/00-28-02";
+        RequestParam param = new RequestParam();
+        param.add("forumPostId",id);
+        Type type = new TypeToken<ResponseContent<HpWonderfulContent>>() {}.getType();
+        LOG.i("debug","type------>"+type);
+        ApiClient.execute(url, param, callback, type);
+    }
+
+
+
+    /**
+     * 获取首页热门标签
+     */
+    public static void getHotLableContent(ResponseCallback<List<TagHot>> callback) {
+        String url = BASE_URL + "/00-30-01";
+        RequestParam param = new RequestParam();
+        //param.add("forumPostId",id);
+        Type type = new TypeToken<ResponseContent<List<TagHot>>>() {}.getType();
+        LOG.i("debug","type------>"+type);
+        ApiClient.execute(url, param, callback, type);
+    }
+
+
+
+    /**
+     * 获取一级标签列表
+     *
+     * @param callback
+     */
+    public static void getFristLableContent(ResponseCallback<List<LablesBean>> callback) {
+        String url = BASE_URL + "/00-30-02";
+        RequestParam param = new RequestParam();
+        //param.add("forumPostId",id);
+        Type type = new TypeToken<ResponseContent<List<LablesBean>>>() {}.getType();
+        LOG.i("debug","type------>"+type);
+        ApiClient.execute(url, param, callback, type);
+    }
+
+
+    /**
+     * 获取二级标签列表
+     *
+     * @param callback
+     */
+    public static void getSecondLableContent(int id,ResponseCallback<List<LablesBean>> callback) {
+        String url = BASE_URL + "/00-30-03";
+        RequestParam param = new RequestParam();
+        param.add("parentId",id);
+        Type type = new TypeToken<ResponseContent<List<LablesBean>>>() {}.getType();
+        LOG.i("debug","type------>"+type);
+        ApiClient.execute(url, param, callback, type);
+    }
+
+
+    /**
+     * 二级所有标签列表
+     *
+     * @param callback
+     */
+    public static void getAllLable(ResponseCallback<List<LablesBean>> callback) {
+        String url = BASE_URL + "/00-30-06";
+        RequestParam param = new RequestParam();
+        Type type = new TypeToken<ResponseContent<List<LablesBean>>>() {}.getType();
+        LOG.i("debug","type------>"+type);
+        ApiClient.execute(url, param, callback, type);
+    }
+
+    /**
+     * 获取某一个标签下的所有问题
+     */
+    public static void getAllQuestionContent(int taglibId,ResponseCallback<List<LablesBean>> callback) {
+        String url = BASE_URL + "/00-29-05";
+        RequestParam param = new RequestParam();
+        param.add("taglibId",taglibId);
+        Type type = new TypeToken<ResponseContent<List<LablesBean>>>() {}.getType();
+        LOG.i("debug","type------>"+type);
+        ApiClient.execute(url, param, callback, type);
+    }
+
+    /**
+     * 获取某一个标签下的所有文章
+     */
+    public static void getAllLableContent(int taglibId,ResponseCallback<List<HpWonderfulContent>> callback) {
+        String url = BASE_URL + "/00-28-06";
+        RequestParam param = new RequestParam();
+        param.add("taglibId",taglibId);
+        Type type = new TypeToken<ResponseContent<List<HpWonderfulContent>>>() {}.getType();
+        LOG.i("debug","type------>"+type);
+        ApiClient.execute(url, param, callback, type);
+    }
+
+    /**
+     * 添加问题接口
+     *
+     * @param callback
+     */
+    public static void addAnswer(String title,String content,int[] taglibIds,String [] images,ResponseCallback<String> callback) {
+        String url = BASE_URL + "/00-29-01";
+        RequestParam param = new RequestParam();
+       // param.add("formPostId",formPostId);
+        param.add("title",title);
+        param.add("content",content);
+        param.add("taglibIds",taglibIds);
+        param.add("images",images);
+        Type type = new TypeToken<ResponseContent<String>>() {}.getType();
+        LOG.i("debug","type------>"+type);
+        ApiClient.execute(url, param, callback, type);
+    }
+
+    /**
+     * 文章发布,帖子发布
+     *
+     * @param title
+     * @param content
+     * @param taglibIds
+     * @param callback
+     */
+    public static void publishContent(String title,String content,int [] taglibIds,String[] images,ResponseCallback<String> callback) {
+        String url = BASE_URL + "/00-28-04";
+        RequestParam param = new RequestParam();
+
+        param.add("title",title);
+        param.add("content",content);
+        param.add("taglibIds",taglibIds);//标签组
+        param.add("images",images);//图片组
+        Type type = new TypeToken<ResponseContent<String>>() {}.getType();
+        LOG.i("debug","type------>"+type);
+        ApiClient.execute(url, param, callback, type);
+    }
+
+
+    /**
+     * 支持文章或取消支持
+     * @param id  文章id
+     *
+     * @param callback
+     */
+    public static void support(int id,ResponseCallback<String> callback) {
+        String url = BASE_URL + "/00-28-03";
+        RequestParam param = new RequestParam("", "");
+        param.add("forumPostId", id);
+        Type type = new TypeToken<ResponseContent<String>>() {
+        }.getType();
+        ApiClient.execute(url, param, callback, type);
+    }
+
+
+    /**
+     * 问题回答的支持或取消支持
+     * @param id  文章id
+     *
+     * @param callback
+     */
+    public static void supportAnswer(int id,ResponseCallback<String> callback) {
+        String url = BASE_URL + "/00-29-02";
+        RequestParam param = new RequestParam("", "");
+        param.add("questionAnswerId", id);
+        Type type = new TypeToken<ResponseContent<String>>() {
+        }.getType();
+        ApiClient.execute(url, param, callback, type);
+    }
+
+    /**
+     * 添加文章回复
+     *
+     * @param callback
+     */
+    public static void addAnswerContentDetail(int formPostId,String content,ResponseCallback<String> callback) {
+        String url = BASE_URL + "/00-28-05";
+        RequestParam param = new RequestParam("", "");
+
+        param.add("formPostId", formPostId);//文章id
+        param.add("content", content);
+       // param.add("toUserId", toUserId);//回复给谁的
+
+        Type type = new TypeToken<ResponseContent<String>>() {
+        }.getType();
+        ApiClient.execute(url, param, callback, type);
+    }
+
+
+    /**
+     * 查询问题详情
+     * @param questionId  文章id
+     *
+     * @param callback
+     */
+    public static void searchQuestionDetail(int questionId,ResponseCallback<String> callback) {
+        String url = BASE_URL + "/00-29-04";
+        RequestParam param = new RequestParam("", "");
+        param.add("questionId", questionId);
+        Type type = new TypeToken<ResponseContent<String>>() {
+        }.getType();
+        ApiClient.execute(url, param, callback, type);
+    }
+
+    /**
+     * 添加问题回复
+     * @param questionId
+     * @param callback
+     */
+    public static void addAnswerQuestionDetail(int questionId,String content,ResponseCallback<String> callback) {
+        String url = BASE_URL + "/00-29-03";
+        RequestParam param = new RequestParam("", "");
+        param.add("questionId", questionId);
+        param.add("content", content);
+        Type type = new TypeToken<ResponseContent<String>>() {
+        }.getType();
+        ApiClient.execute(url, param, callback, type);
+    }
+
+
 
 
 

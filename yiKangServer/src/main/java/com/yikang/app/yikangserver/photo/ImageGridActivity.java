@@ -16,6 +16,7 @@ import android.widget.GridView;
 import android.widget.Toast;
 
 import com.yikang.app.yikangserver.R;
+import com.yikang.app.yikangserver.ui.PublishLablesActivity;
 import com.yikang.app.yikangserver.ui.PublishPostActivity;
 
 import java.util.ArrayList;
@@ -32,6 +33,7 @@ public class ImageGridActivity extends Activity {
 	ImageGridAdapter adapter;// 鑷畾涔夌殑閫傞厤鍣�
 	AlbumHelper helper;
 	Button bt;
+	String wheres;
 
 	Handler mHandler = new Handler() {
 		@Override
@@ -50,7 +52,7 @@ public class ImageGridActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
+		wheres=getIntent().getStringExtra("wheres");
 		setContentView(R.layout.photo_activity_image_grid);
 
 		helper = AlbumHelper.getHelper();
@@ -60,6 +62,9 @@ public class ImageGridActivity extends Activity {
 				EXTRA_IMAGE_LIST);
 
 		initView();
+		/**
+		 * 完成保存图片的按钮
+		 */
 		bt = (Button) findViewById(R.id.bt);
 		bt.setOnClickListener(new OnClickListener() {
 
@@ -72,10 +77,19 @@ public class ImageGridActivity extends Activity {
 				}
 
 				if (Bimp.act_bool) {
-					Intent intent = new Intent(ImageGridActivity.this,
-							PublishPostActivity.class);
-					startActivity(intent);
-					Bimp.act_bool = false;
+					if (wheres.equals("wenti")) {
+						Intent intent = new Intent(ImageGridActivity.this,
+								PublishPostActivity.class);
+						startActivity(intent);
+						Bimp.act_bool = false;
+					}
+					if (wheres.equals("tiezi"))
+					{
+						Intent intent = new Intent(ImageGridActivity.this,
+								PublishLablesActivity.class);
+						startActivity(intent);
+						Bimp.act_bool = false;
+					}
 				}
 				for (int i = 0; i < list.size(); i++) {
 					if (Bimp.drr.size() < 4) {

@@ -3,8 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-              android:gravity="center_vertical"
-    android:background="@color/main_tab_background_color"
+    android:gravity="center_vertical"
+    android:background="@drawable/item_bg02"
     android:padding="5dp">
 
     <com.yikang.app.yikangserver.view.CircleImageView
@@ -41,7 +41,7 @@
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_weight="1.5"
         android:orientation="vertical"
         android:gravity="right"
 
@@ -53,14 +53,17 @@
             android:text="10天前"
             android:textSize="@dimen/common_text_size_middle_small"
             android:textColor="@color/homepage_title_right_text_color"/>
+
         <TextView
+            android:id="@+id/lables_tv_focusnum"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="143条帖子"
             android:layout_marginTop="5dp"
             android:textSize="@dimen/common_text_size_middle_small"
             android:textColor="@color/community_top_lable_color"
-            android:visibility="invisible"/>
+           />
+
     </LinearLayout>
 
 </LinearLayout>

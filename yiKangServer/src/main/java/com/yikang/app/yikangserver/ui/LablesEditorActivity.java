@@ -109,7 +109,7 @@ public class LablesEditorActivity extends BaseActivity implements View.OnClickLi
                     } else {
                         isShowDelete = true;
                     }
-                    lable_editoer_tv.setText("完成");
+                    //lable_editoer_tv.setText("完成");
                     community_mine_lables_gridview.setAdapter(longAdapter);
                     longAdapter.setIsShowDelete(isShowDelete);
                 }
@@ -122,14 +122,17 @@ public class LablesEditorActivity extends BaseActivity implements View.OnClickLi
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.lable_editoer_tv:
-                if (lable_editoer_tv.getText().toString().equals("编辑")){
-                    lables_all_ll.setVisibility(View.GONE);
-                    lable_divider.setVisibility(View.GONE);
-                }
                 if (lable_editoer_tv.getText().toString().equals("完成")){
                     LOG.i("debug","minelist===>"+mineList);
                     finish();
+                    overridePendingTransition(R.anim.trans_right_in, R.anim.trans_left_out);
                 }
+                if (lable_editoer_tv.getText().toString().equals("编辑")){
+                    lables_all_ll.setVisibility(View.GONE);
+                    lable_divider.setVisibility(View.GONE);
+                    lable_editoer_tv.setText("完成");
+                }
+
                 break;
         }
     }

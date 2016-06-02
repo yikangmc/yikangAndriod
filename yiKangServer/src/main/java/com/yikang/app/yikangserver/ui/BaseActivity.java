@@ -11,7 +11,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.yikang.app.yikangserver.R;
-import com.yikang.app.yikangserver.interf.UINetwork;
+import com.yikang.app.yikangserver.interfaces.UINetwork;
 import com.yikang.app.yikangserver.view.CustomWatingDialog;
 
 /**

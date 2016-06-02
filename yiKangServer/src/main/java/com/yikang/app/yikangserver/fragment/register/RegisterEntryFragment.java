@@ -22,10 +22,7 @@ public class RegisterEntryFragment extends BaseFragment implements View.OnClickL
     private EditText edtPhone;
     private Button btComplete;
     private Button btLogin;
-
-
     private OnDone callback;
-
 
     @Override
     public void onAttach(Activity activity) {
@@ -36,9 +33,6 @@ public class RegisterEntryFragment extends BaseFragment implements View.OnClickL
             throw new IllegalArgumentException("wrong argument,context should be instance of RegisterEntryFragment.OnDone");
         }
     }
-
-
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -79,7 +73,9 @@ public class RegisterEntryFragment extends BaseFragment implements View.OnClickL
         }
     }
 
-
+    /*
+    进入用户使用协议页面,加载webView
+     */
     private void startAgreementPage(String title,String url){
         Intent intent = new Intent(getActivity(), WebActivity.class);
         intent.putExtra(WebActivity.EXTRA_URL,url);

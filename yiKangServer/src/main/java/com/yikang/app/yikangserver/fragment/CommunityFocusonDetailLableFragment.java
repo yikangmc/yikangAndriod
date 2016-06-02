@@ -19,7 +19,7 @@ import com.yikang.app.yikangserver.view.XListView;
 import java.util.ArrayList;
 
 /**
- * Created by yudong on 2016/4/20.
+ * Created by 郝晓东on 2016/4/26.
  * 社区关注模块下的标签页面
  */
 public class CommunityFocusonDetailLableFragment extends BaseFragment implements View.OnClickListener{

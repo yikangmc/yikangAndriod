@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -31,7 +32,7 @@ import com.yikang.app.yikangserver.fragment.CommunityFragment;
 import com.yikang.app.yikangserver.fragment.HomepageFragment;
 import com.yikang.app.yikangserver.fragment.MessageFragment;
 import com.yikang.app.yikangserver.fragment.MineFragment;
-import com.yikang.app.yikangserver.reciever.UserInfoAlteredReceiver;
+import com.yikang.app.yikangserver.receiver.UserInfoAlteredReceiver;
 import com.yikang.app.yikangserver.utils.DeviceUtils;
 import com.yikang.app.yikangserver.utils.DoubleClickExitHelper;
 import com.yikang.app.yikangserver.utils.LOG;
@@ -344,7 +345,12 @@ public class MainActivity extends BaseFragmentActivity implements OnCheckedChang
         public int getCount() {
             return TAB_COUNT;
         }
-    }
+
+		@Override
+		public void destroyItem(ViewGroup container, int position, Object object) {
+			//super.destroyItem(container, position, object);
+		}
+	}
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

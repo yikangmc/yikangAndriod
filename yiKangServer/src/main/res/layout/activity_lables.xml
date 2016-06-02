@@ -1,23 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/common_page_background"
     android:fitsSystemWindows="true"
-    android:orientation="vertical">
-
+    android:background="@color/common_page_background"
+    android:layout_height="match_parent">
     <include layout="@layout/include_title_bar" />
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tablayout"
+        app:tabIndicatorColor="#0000ff"
+        android:background="#f6f6f6"
+        app:tabIndicatorHeight="2px"
+        app:tabMode="scrollable"
+        app:tabGravity="center"
+        app:tabTextColor="#ff0000"
+        app:tabSelectedTextColor="#0faadd"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+    </android.support.design.widget.TabLayout>
 
-    <com.viewpagerindicator.TabPageIndicator
-        android:id="@+id/indicator"
-        android:layout_height="wrap_content"
-        android:layout_width="fill_parent"
-        />
     <android.support.v4.view.ViewPager
-        android:id="@+id/pager"
-        android:layout_width="fill_parent"
+        android:id="@+id/viewpager"
+        android:fitsSystemWindows="true"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        />
+        android:layout_weight="1">
+    </android.support.v4.view.ViewPager>
+
 </LinearLayout>
 

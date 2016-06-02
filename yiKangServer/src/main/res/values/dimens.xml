@@ -24,4 +24,5 @@
     <dimen name="controller_lables_gv_min_height">50dp</dimen>
     <dimen name="community_gv_min_height">100dp</dimen>
     <dimen name="professional_lable_min_width">60dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
 </resources>

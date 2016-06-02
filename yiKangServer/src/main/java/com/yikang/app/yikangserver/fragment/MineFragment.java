@@ -14,7 +14,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.yikang.app.yikangserver.R;
@@ -24,12 +23,13 @@ import com.yikang.app.yikangserver.application.AppContext;
 import com.yikang.app.yikangserver.bean.User;
 import com.yikang.app.yikangserver.data.MyData;
 import com.yikang.app.yikangserver.dialog.QrCodeDialog;
-import com.yikang.app.yikangserver.reciever.UserInfoAlteredReceiver;
+import com.yikang.app.yikangserver.receiver.UserInfoAlteredReceiver;
 import com.yikang.app.yikangserver.ui.MineInvitationActivity;
 import com.yikang.app.yikangserver.ui.MineQuestionActivity;
 import com.yikang.app.yikangserver.ui.MineFocusonActivity;
 import com.yikang.app.yikangserver.ui.InviteCustomerListActivity;
 import com.yikang.app.yikangserver.ui.MineInfoActivity;
+import com.yikang.app.yikangserver.ui.PublishActivityActivity;
 import com.yikang.app.yikangserver.utils.LOG;
 
 /**
@@ -47,7 +47,7 @@ public class MineFragment extends BaseFragment implements OnClickListener {
 
     private TextView tvName, tvProfession, tvInviteCode, tvCustomerNum;
     private ImageView ivAvatar;
-    private LinearLayout mine_ly_invitation, mine_ly_problem, mine_ly_focuson;
+    private LinearLayout mine_ly_invitation, mine_ly_problem, mine_ly_focuson,mine_ly_activities;
     private User user;
     private View tvCheckTip;
 
@@ -139,6 +139,11 @@ public class MineFragment extends BaseFragment implements OnClickListener {
          */
         mine_ly_focuson = (LinearLayout) view.findViewById(R.id.mine_ly_focuson);
 
+        /*
+        参与活动
+         */
+        mine_ly_activities = (LinearLayout) view.findViewById(R.id.mine_ly_activities);
+
         LinearLayout lyBasicInfo = ((LinearLayout) view.findViewById(R.id.ly_mine_basic_info));
         LinearLayout lyQrCode = (LinearLayout) view.findViewById(R.id.ly_mine_qr_code);
         View lyCustomNumber = view.findViewById(R.id.ly_mine_customer_number);
@@ -149,6 +154,7 @@ public class MineFragment extends BaseFragment implements OnClickListener {
         mine_ly_invitation.setOnClickListener(this);
         mine_ly_problem.setOnClickListener(this);
         mine_ly_focuson.setOnClickListener(this);
+        mine_ly_activities.setOnClickListener(this);
 
 
 //        fillToViews();
@@ -193,6 +199,13 @@ public class MineFragment extends BaseFragment implements OnClickListener {
                 break;
             case R.id.ly_mine_customer_number:
                 toCustomerListPage();
+                break;
+            case R.id.mine_ly_activities:
+                Intent intent4 = new Intent(getActivity(),
+                        PublishActivityActivity.class);
+                intent4.putExtra(PublishActivityActivity.MESSAGE_INFOS,"活动形式");
+                startActivity(intent4);
+                getActivity().overridePendingTransition(R.anim.trans_right_in, R.anim.trans_left_out);
                 break;
             case R.id.mine_ly_invitation:
                 Intent intent1 = new Intent(getActivity(),

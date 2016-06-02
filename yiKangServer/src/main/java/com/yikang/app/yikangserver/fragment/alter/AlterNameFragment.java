@@ -14,7 +14,7 @@ import com.yikang.app.yikangserver.api.Api;
 import com.yikang.app.yikangserver.api.callback.ResponseCallback;
 import com.yikang.app.yikangserver.application.AppContext;
 import com.yikang.app.yikangserver.bean.User;
-import com.yikang.app.yikangserver.interf.CanSubmit;
+import com.yikang.app.yikangserver.interfaces.CanSubmit;
 import com.yikang.app.yikangserver.utils.LOG;
 
 /**

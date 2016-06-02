@@ -7,12 +7,20 @@ public class LableDetailsBean {
 	private String  headIvUrl;
 	private String  headTvName;
 	private String  HeadTvLable;
+    private int  taglibId;
 	private String  releaseTime;
 	private List<String> detailIvUrls;
     private String  detailTv;
     private String  detailLable;
     private String  detailSupport;
     private String  detailDiscuss;
+    public int getTaglibId() {
+        return taglibId;
+    }
+
+    public void setTaglibId(int taglibId) {
+        this.taglibId = taglibId;
+    }
 
     public String getHeadIvUrl() {
         return headIvUrl;

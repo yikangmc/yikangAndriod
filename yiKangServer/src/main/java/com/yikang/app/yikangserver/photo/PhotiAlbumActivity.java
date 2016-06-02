@@ -15,6 +15,9 @@ import com.yikang.app.yikangserver.R;
 import java.io.Serializable;
 import java.util.List;
 
+/**
+ * 从相册选取照片
+ */
 public class PhotiAlbumActivity extends Activity {
 	// ArrayList<Entity> dataList;//用来装载数据源的列表
 	List<ImageBucket> dataList;
@@ -23,13 +26,14 @@ public class PhotiAlbumActivity extends Activity {
 	AlbumHelper helper;
 	public static final String EXTRA_IMAGE_LIST = "imagelist";
 	public static Bitmap bimap;
+	String fromWhere;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.photo_activity_image_bucket);
-
+		fromWhere=getIntent().getStringExtra("where");
 		helper = AlbumHelper.getHelper();
 		helper.init(getApplicationContext());
 
@@ -85,6 +89,7 @@ public class PhotiAlbumActivity extends Activity {
 						ImageGridActivity.class);
 				intent.putExtra(PhotiAlbumActivity.EXTRA_IMAGE_LIST,
 						(Serializable) dataList.get(position).imageList);
+				intent.putExtra("wheres",fromWhere);
 				startActivity(intent);
 				finish();
 			}

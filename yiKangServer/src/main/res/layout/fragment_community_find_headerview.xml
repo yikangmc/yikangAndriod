@@ -16,6 +16,7 @@
         android:orientation="vertical">
         <!-- ViewPager是一个控件 -->
         <android.support.v4.view.ViewPager
+            android:background="@drawable/item_bg02"
             android:id="@+id/adv_pager"
             android:layout_width="fill_parent"
             android:layout_height="140dp">
@@ -44,6 +45,7 @@
             <FrameLayout
                 android:id="@+id/community_fl_top1"
                 android:layout_width="0dp"
+                android:background="@drawable/item_bg02"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -71,6 +73,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/item_bg02"
                 android:gravity="center"
                 android:padding="5dp">
 
@@ -104,10 +107,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/yk_community_tab_recommend"
-            android:drawablePadding="4dp"
+            android:drawablePadding="6dp"
+            android:textColor="@color/homepage_title_left_text_color"
+            android:textSize="14sp"
             android:padding="5dp"
             android:text="推荐康复师"
-            android:textSize="12sp" />
+             />
     </RelativeLayout>
 
     <View
@@ -126,6 +131,7 @@
         <LinearLayout
             android:id="@+id/community_find_personal_info_ll1"
             android:layout_width="0dp"
+            android:background="@drawable/item_bg02"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_horizontal"
@@ -172,6 +178,7 @@
         <LinearLayout
             android:id="@+id/community_find_personal_info_ll2"
             android:layout_width="0dp"
+            android:background="@drawable/item_bg02"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_horizontal"
@@ -218,6 +225,7 @@
         <LinearLayout
             android:id="@+id/community_find_personal_info_ll3"
             android:layout_width="0dp"
+            android:background="@drawable/item_bg02"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_horizontal"
@@ -264,6 +272,7 @@
         <LinearLayout
             android:id="@+id/community_find_personal_info_ll4"
             android:layout_width="0dp"
+            android:background="@drawable/item_bg02"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_horizontal"
@@ -310,6 +319,7 @@
         <LinearLayout
             android:id="@+id/community_find_personal_info_ll5"
             android:layout_width="0dp"
+            android:background="@drawable/item_bg02"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_horizontal"
@@ -364,10 +374,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/hot_tiezi"
-            android:drawablePadding="4dp"
+            android:drawablePadding="6dp"
+
+            android:textColor="@color/homepage_title_left_text_color"
+
+
+            android:textSize="14sp"
             android:padding="5dp"
             android:text="最热帖子"
-            android:textSize="12sp" />
+            />
     </RelativeLayout>
 
 

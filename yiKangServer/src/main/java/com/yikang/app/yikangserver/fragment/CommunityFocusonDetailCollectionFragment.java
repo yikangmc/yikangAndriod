@@ -19,7 +19,7 @@ import com.yikang.app.yikangserver.view.XListView;
 import java.util.ArrayList;
 
 /**
- * Created by yudong on 2016/4/20.
+ * Created by 郝晓东 on 2016/4/26.
  * 社区关注模块下的收藏页面
  */
 public class CommunityFocusonDetailCollectionFragment extends BaseFragment implements View.OnClickListener{
@@ -46,6 +46,7 @@ public class CommunityFocusonDetailCollectionFragment extends BaseFragment imple
 
         @Override
         public boolean onDown(SwipeView swipeView) {
+
             if (openedSwipeView != null && openedSwipeView != swipeView) {
                 openedSwipeView.close();
                 return false;
@@ -66,6 +67,7 @@ public class CommunityFocusonDetailCollectionFragment extends BaseFragment imple
     public CommunityFocusonDetailCollectionFragment(){
        
     }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -144,6 +146,8 @@ public class CommunityFocusonDetailCollectionFragment extends BaseFragment imple
 
             }
         });
+
+
 
         message_xlistview.setXListViewListener(new XListView.IXListViewListener() {
             @Override

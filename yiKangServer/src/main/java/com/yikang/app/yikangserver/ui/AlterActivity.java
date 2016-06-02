@@ -12,7 +12,7 @@ import com.yikang.app.yikangserver.fragment.alter.AlterExpertFragment;
 import com.yikang.app.yikangserver.fragment.alter.AlterHospitalFragment;
 import com.yikang.app.yikangserver.fragment.alter.AlterNameFragment;
 import com.yikang.app.yikangserver.fragment.alter.AlterProfessionFragment;
-import com.yikang.app.yikangserver.interf.CanSubmit;
+import com.yikang.app.yikangserver.interfaces.CanSubmit;
 
 
 /**

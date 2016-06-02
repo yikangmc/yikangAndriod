@@ -52,7 +52,6 @@
             android:columnWidth="@dimen/professional_lable_min_width"
             android:horizontalSpacing="5dp"
             android:numColumns="4"
-            android:scrollbars="none"
             android:verticalSpacing="5dp"/>
     </LinearLayout>
 
@@ -95,7 +94,6 @@
             android:horizontalSpacing="5dp"
             android:listSelector="@android:color/transparent"
             android:numColumns="4"
-            android:scrollbars="none"
             android:verticalSpacing="5dp"/>
     </LinearLayout>
 

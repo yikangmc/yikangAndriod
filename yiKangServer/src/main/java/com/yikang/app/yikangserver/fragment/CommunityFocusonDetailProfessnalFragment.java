@@ -1,5 +1,6 @@
 package com.yikang.app.yikangserver.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -13,6 +14,7 @@ import com.yikang.app.yikangserver.R;
 import com.yikang.app.yikangserver.adapter.CommonAdapter;
 import com.yikang.app.yikangserver.adapter.ViewHolder;
 import com.yikang.app.yikangserver.bean.LableDetailsBean;
+import com.yikang.app.yikangserver.ui.PersonalHomepageActivity;
 import com.yikang.app.yikangserver.view.SwipeView;
 import com.yikang.app.yikangserver.view.SwipeView.OnSwipeChangeListener;
 import com.yikang.app.yikangserver.view.XListView;
@@ -20,7 +22,7 @@ import com.yikang.app.yikangserver.view.XListView;
 import java.util.ArrayList;
 
 /**
- * Created by yudong on 2016/4/20.
+ * Created by 郝晓东 on 2016/4/26.
  */
 public class CommunityFocusonDetailProfessnalFragment extends BaseFragment implements View.OnClickListener {
 
@@ -86,6 +88,7 @@ public class CommunityFocusonDetailProfessnalFragment extends BaseFragment imple
             @Override
             protected void convert(ViewHolder holder, LableDetailsBean item) {
                 TextView lables_tv_title = holder.getView(R.id.lables_tv_title);
+                com.yikang.app.yikangserver.view.CircleImageView iv_mine_avatar = holder.getView(R.id.iv_mine_avatar);
                 //TextView lables_tv_tiezi = holder.getView(R.id.lables_details_tv_zhicheng);
                 //TextView lables_tv_time = holder.getView(R.id.lables_details_tv_pushtime);
                 lables_tv_title.setText(item.getHeadTvName());
@@ -97,6 +100,15 @@ public class CommunityFocusonDetailProfessnalFragment extends BaseFragment imple
 
                 SwipeView swipeView = (SwipeView) holder.getConvertView();
                 swipeView.setOnSwipeChangeListener(onSwipeChangeListener);
+                iv_mine_avatar.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(getActivity(),
+                                PersonalHomepageActivity.class);
+                        startActivity(intent);
+                        getActivity().overridePendingTransition(R.anim.trans_right_in, R.anim.trans_left_out);
+                    }
+                });
                 /*
                     进行删除操作
                  */

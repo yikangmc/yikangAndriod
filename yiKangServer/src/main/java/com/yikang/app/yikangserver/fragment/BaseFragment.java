@@ -4,8 +4,8 @@ import android.app.Dialog;
 import android.support.v4.app.Fragment;
 
 import com.yikang.app.yikangserver.R;
-import com.yikang.app.yikangserver.interf.NetworkErrorHandler;
-import com.yikang.app.yikangserver.interf.UINetwork;
+import com.yikang.app.yikangserver.interfaces.NetworkErrorHandler;
+import com.yikang.app.yikangserver.interfaces.UINetwork;
 import com.yikang.app.yikangserver.view.CustomWatingDialog;
 
 public class BaseFragment extends Fragment implements UINetwork,NetworkErrorHandler{

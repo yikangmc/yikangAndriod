@@ -22,7 +22,7 @@
                 android:id="@+id/lables_tv_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="如何让女生正确的运动"
+
                 android:textSize="18dp"/>
         </LinearLayout>
 
@@ -33,17 +33,20 @@
             android:padding="5dp"
             android:gravity="center_vertical">
             <ImageView
+                android:id="@+id/lables_iv_userphoto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/yk_community_tab_recommend_user"/>
 
             <TextView
+                android:id="@+id/lables_tv_username"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="傻傻分不清"
+
                 android:layout_marginLeft="4dp"
                 android:textSize="12dp"/>
             <TextView
+                android:id="@+id/lables_tv_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="提问于2016.05.09"
@@ -61,6 +64,7 @@
                     android:textSize="12dp"
                     android:text="已获"/>
                 <TextView
+                    android:id="@+id/lables_tv_nums"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="12dp"

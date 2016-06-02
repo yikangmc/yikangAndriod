@@ -63,8 +63,6 @@
                 android:textSize="13sp" />
         </LinearLayout>
     </LinearLayout>
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -73,12 +71,35 @@
         android:orientation="vertical">
 
         <EditText
+            android:id="@+id/et_title"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_margin="8dp"
+            android:background="@null"
+            android:gravity="left|center"
+            android:textSize="13dp"
+            android:layout_gravity="center"
+            android:textColorHint="#969696"
+            android:hint="填写你的问题（必填）"></EditText>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/et_content"
             android:layout_width="fill_parent"
             android:layout_height="100dp"
             android:layout_margin="8dp"
             android:background="@null"
+            android:textSize="13dp"
+            android:textColorHint="#969696"
             android:gravity="left|top"
-            android:hint="分享您的那点新鲜事儿..."></EditText>
+            android:hint="填写你的问题描述（选填）"></EditText>
 
         <GridView
             android:id="@+id/noScrollgridview"
@@ -97,7 +118,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:padding="5dp"
-        android:text="为帖子添加标签" />
+        android:text="问题默认标签" />
 
     <GridView
         android:id="@+id/lable_gv_test"

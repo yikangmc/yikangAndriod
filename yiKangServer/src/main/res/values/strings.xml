@@ -56,7 +56,7 @@
 
     <string name="web_agreement_title">用户使用协议</string>
 
-    <string name="register_entry_phone_hint">请输入手机号码</string>
+    <string name="register_entry_phone_hint">请填写您的手机号</string>
     <string name="set_password_hint">请输入6-16位密码</string>
     <string name="set_password_again_hint">请再次确认密码</string>
     <string name="register_verify_code_hint">请输入验证码</string>

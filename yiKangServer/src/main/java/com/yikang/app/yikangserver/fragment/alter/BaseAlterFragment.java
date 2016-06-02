@@ -1,11 +1,10 @@
 package com.yikang.app.yikangserver.fragment.alter;
 
 import android.content.Intent;
-import android.os.Bundle;
 
 import com.yikang.app.yikangserver.fragment.BaseFragment;
-import com.yikang.app.yikangserver.interf.CanSubmit;
-import com.yikang.app.yikangserver.reciever.UserInfoAlteredReceiver;
+import com.yikang.app.yikangserver.interfaces.CanSubmit;
+import com.yikang.app.yikangserver.receiver.UserInfoAlteredReceiver;
 
 /**
  * 点击某一项的修改之后跳到的页面

@@ -39,6 +39,7 @@
         android:orientation="horizontal">
 
         <EditText
+            android:id="@+id/et_comment"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -47,7 +48,7 @@
             android:drawableBottom="@drawable/yk_all_divider_horizontal"
             android:drawablePadding="10dp"
             android:paddingLeft="70dp"
-
+            android:textSize="14sp"
             android:gravity="center|left"
             android:hint="我在这里补充两句~"
             android:textColorHint="@color/homepage_title_right_text_color"/>

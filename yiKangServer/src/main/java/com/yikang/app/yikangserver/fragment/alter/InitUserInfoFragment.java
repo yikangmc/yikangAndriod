@@ -27,7 +27,7 @@ import com.yikang.app.yikangserver.data.MyData;
 import com.yikang.app.yikangserver.dialog.DialogFactory;
 import com.yikang.app.yikangserver.fragment.BaseFragment;
 import com.yikang.app.yikangserver.fragment.SystemSelectPhotoFragment;
-import com.yikang.app.yikangserver.reciever.UserInfoAlteredReceiver;
+import com.yikang.app.yikangserver.receiver.UserInfoAlteredReceiver;
 import com.yikang.app.yikangserver.ui.AddressSearchActivity;
 import com.yikang.app.yikangserver.ui.AlterActivity;
 import com.yikang.app.yikangserver.utils.BitmapUtils;
@@ -94,15 +94,9 @@ public class InitUserInfoFragment extends BaseFragment implements
 
     /**记录修改了那些项*/
     private int alterStatus=0x00;//修改
-
-
     private User user;
-
     private ArrayList<Department> departmentData = new ArrayList<>();
     private PopListAdapter departmentAdapter;
-
-
-
     private View rootView;
     private ImageView ivAvatar;
     private TextView tvAddress;
@@ -137,7 +131,7 @@ public class InitUserInfoFragment extends BaseFragment implements
     private ResponseCallback<FileResponse> uploadAvatarHandler = new ResponseCallback<FileResponse>() {
         @Override
         public void onSuccess(FileResponse data) {
-            LOG.i(TAG,"[uploadAvatarHandler]上传头像成功");
+            LOG.i(TAG,"[uploadAvatarHandler]上传头像成功"+data.fileUrl);
             alterAvatarInfo(data.fileUrl);
         }
 

@@ -6,9 +6,9 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * Created by yudong on 2016/5/3.
+ * Created by 郝晓东 on 2016/5/3.
  */
-public class HpWonderfulContent implements Serializable {
+public class HpWonderfulContent extends BannerBean implements Serializable {
 
     @SerializedName( "userName")
     private String userName;
@@ -25,9 +25,9 @@ public class HpWonderfulContent implements Serializable {
     @SerializedName( "isEssence")
     private int isEssence;
     @SerializedName( "createTime")
-    private long createTime;
+    private Long createTime;
     @SerializedName( "updateTime")
-    private long updateTime;
+    private Long updateTime;
     @SerializedName( "stars")
     private int stars;
     @SerializedName( "shareNum")
@@ -42,12 +42,12 @@ public class HpWonderfulContent implements Serializable {
     private int startNums;
     @SerializedName( "answersNums")
     private int answersNums;
-    @SerializedName( "formPostsStarLists")
-    private String formPostsStarLists;
-    @SerializedName( "forumPostsAnswers")
-    private String forumPostsAnswers;
     @SerializedName( "taglibs")
     private List<Taglibs> taglibs;
+    @SerializedName( "forumPostsAnswers")
+    private List<ForumPostsAnswers> forumPostsAnswers;
+    @SerializedName( "forumPostsImage")
+    private List<ForumPostsImage> forumPostsImage;
 
 
     public int getForumPostId() {
@@ -122,20 +122,22 @@ public class HpWonderfulContent implements Serializable {
         this.answersNums = answersNums;
     }
 
-    public String getFormPostsStarLists() {
-        return formPostsStarLists;
-    }
 
-    public void setFormPostsStarLists(String formPostsStarLists) {
-        this.formPostsStarLists = formPostsStarLists;
-    }
 
-    public String getForumPostsAnswers() {
+    public List<ForumPostsAnswers> getForumPostsAnswers() {
         return forumPostsAnswers;
     }
 
-    public void setForumPostsAnswers(String forumPostsAnswers) {
+    public void setForumPostsAnswers(List<ForumPostsAnswers> forumPostsAnswers) {
         this.forumPostsAnswers = forumPostsAnswers;
+    }
+
+    public List<ForumPostsImage> getForumPostsImage() {
+        return forumPostsImage;
+    }
+
+    public void setForumPostsImage(List<ForumPostsImage> forumPostsImage) {
+        this.forumPostsImage = forumPostsImage;
     }
 
     public String getUserName() {
@@ -201,5 +203,13 @@ public class HpWonderfulContent implements Serializable {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public void setCreateTime(Long createTime) {
+        this.createTime = createTime;
+    }
+
+    public void setUpdateTime(Long updateTime) {
+        this.updateTime = updateTime;
     }
 }

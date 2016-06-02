@@ -17,6 +17,10 @@ import android.widget.Toast;
 import com.yikang.app.yikangserver.R;
 import com.yikang.app.yikangserver.adapter.CommonAdapter;
 import com.yikang.app.yikangserver.adapter.ViewHolder;
+import com.yikang.app.yikangserver.api.Api;
+import com.yikang.app.yikangserver.api.callback.ResponseCallback;
+import com.yikang.app.yikangserver.application.AppContext;
+import com.yikang.app.yikangserver.utils.LOG;
 import com.yikang.app.yikangserver.utils.LvHightUtils;
 
 import java.util.ArrayList;
@@ -137,9 +141,27 @@ public class KeywordSearchActivity extends BaseActivity implements View.OnClickL
             case R.id.keyword_search_tv:
                // markApp();
                 Toast.makeText(getApplicationContext(),"开始搜索",Toast.LENGTH_SHORT).show();
+                Api.getSearchContent(keyword_search_info_et.getText().toString().trim(),publishAnswerHandler);
                 break;
         }
     }
+
+    private ResponseCallback<String> publishAnswerHandler = new ResponseCallback<String>() {
+
+        @Override
+        public void onSuccess(String data) {
+            hideWaitingUI();
+            LOG.i("debug", "HpWonderfulContent---->" + data);
+
+        }
+
+        @Override
+        public void onFailure(String status, String message) {
+            LOG.i("debug", "[loadUserInfo]加载失败-->" + message + "   status-->" + status);
+            // hideWaitingUI();
+            AppContext.showToast(message);
+        }
+    };
 
     /**
      * 该app打分

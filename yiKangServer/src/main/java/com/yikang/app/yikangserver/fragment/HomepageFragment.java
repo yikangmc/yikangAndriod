@@ -1,7 +1,9 @@
 package com.yikang.app.yikangserver.fragment;
 
 import android.annotation.TargetApi;
+import android.app.Dialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -23,21 +25,25 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
 import com.yikang.app.yikangserver.R;
 import com.yikang.app.yikangserver.adapter.CommonAdapter;
 import com.yikang.app.yikangserver.adapter.ViewHolder;
 import com.yikang.app.yikangserver.api.Api;
 import com.yikang.app.yikangserver.api.callback.ResponseCallback;
 import com.yikang.app.yikangserver.application.AppContext;
+import com.yikang.app.yikangserver.bean.BannerBean;
 import com.yikang.app.yikangserver.bean.CommunityDetailsBean;
 import com.yikang.app.yikangserver.bean.HpWonderfulContent;
+import com.yikang.app.yikangserver.bean.TagHot;
+import com.yikang.app.yikangserver.dialog.DialogFactory;
 import com.yikang.app.yikangserver.ui.ComActivitiesActivity;
 import com.yikang.app.yikangserver.ui.KeywordSearchActivity;
 import com.yikang.app.yikangserver.ui.LableDetaileExampleActivity;
 import com.yikang.app.yikangserver.ui.LableDetailsActivity;
 import com.yikang.app.yikangserver.ui.LablesActivity;
 import com.yikang.app.yikangserver.utils.LOG;
-import com.yikang.app.yikangserver.utils.T;
 import com.yikang.app.yikangserver.view.XListView;
 
 import java.util.ArrayList;
@@ -48,25 +54,16 @@ import java.util.List;
  */
 public class HomepageFragment extends BaseFragment implements OnClickListener {
     protected static final String TAG = "HomepageFragment";
-    //    private static SparseIntArray defaultAvatar = new SparseIntArray();
-//
-//    static {
-//        defaultAvatar.put(MyData.DOCTOR,R.drawable.doctor_default_avatar);
-//        defaultAvatar.put(MyData.NURSING,R.drawable.nurse_default_avatar);
-//        defaultAvatar.put(MyData.THERAPIST,R.drawable.therapists_default_avatar);
-//    }
-    private TextView homepage_tv_arrow, homepage_tv_more, homepage_wonderfulcontent_support, homepage_wonderfulcontent_comment;
-    //    private GridView homepage_tables_gridview;
+
+    private TextView homepage_tv_arrow, homepage_tv_more, homepage_wonderfulcontent_support, homepage_wonderfulcontent_comment,homepage_ll_wonderfulcontent_text,tv_good_content_title,tv_good_content_username;
+
     private String tab_lables[] = {"运动康复", "瘦身", "营养专家", "日常训练", "体态矫正", "吞咽障碍",
             "语言康复", "糖尿病", "神经", "老人", "儿童",
-            "偏瘫", "冠心病", "动脉硬化", "中风", "软组织损伤", "富贵病", "慢性肾炎"};
+            "偏瘫", "冠心病", "动脉硬化", "中风", "软组织损伤","腰疼","肾虚"};
     private List<String> stringList = new ArrayList<String>();
-//    private int NUM = 4; // 每行显示个数
-//    private int LIEWIDTH;//每列宽度
-//    DisplayMetrics dm;
-    private ImageView homepage_iv_banner;
+    private ImageView homepage_iv_banner,iv_good_content;
     private EditText search_et_content;
-    private LinearLayout homepage_ll_goodanswer_first,homepage_ll_goodanswer_second;
+    private LinearLayout homepage_ll_goodanswer_first,homepage_ll_goodanswer_second,homepage_ll_goodanswer_third,ll_wonderfulcontent_hp;
     private ViewPager homepage_vPager;
     private ViewGroup homepage_ll_viewGroup;
     private ImageView[] imageViews = null;
@@ -78,6 +75,13 @@ public class HomepageFragment extends BaseFragment implements OnClickListener {
     private CommonAdapter<CommunityDetailsBean> ComlanleCommonAdapter;
     private Handler mHandler;
     private View lvHeaderView;
+    List<BannerBean> bannerHp;
+    List<TagHot> tagHot;
+    List<HpWonderfulContent> goodContentHp;
+    private TextView tv_tag1;//标签1
+    private TextView tv_tag2;//标签2
+    private TextView tv_tag3;//标签3
+    private TextView tv_tag4;//标签4
     @Override
     public void onResume() {
         super.onResume();
@@ -105,6 +109,7 @@ public class HomepageFragment extends BaseFragment implements OnClickListener {
     private void initView(View view) {
         community_detals_listview = (XListView) view.findViewById(R.id.community_detals_listview);
         community_detals_listview.addHeaderView(lvHeaderView);
+
         community_detals_listview.setPullLoadEnable(true);
         ComlanleCommonAdapter = new CommonAdapter<CommunityDetailsBean>(getContext(), Comlables, R.layout.list_community_details_item) {
             @Override
@@ -163,17 +168,30 @@ public class HomepageFragment extends BaseFragment implements OnClickListener {
     }
     @TargetApi(Build.VERSION_CODES.M)
     private void findViews(View view) {
+        tv_tag1= (TextView) view.findViewById(R.id.tv_tag1);
+        tv_tag2= (TextView) view.findViewById(R.id.tv_tag2);
+        tv_tag3= (TextView) view.findViewById(R.id.tv_tag3);
+        tv_tag4= (TextView) view.findViewById(R.id.tv_tag4);
         homepage_tv_arrow = (TextView) view.findViewById(R.id.homepage_tv_arrow);
         homepage_tv_more = (TextView) view.findViewById(R.id.homepage_tv_more);
+        tv_good_content_title = (TextView) view.findViewById(R.id.tv_good_content_title);
+        tv_good_content_username = (TextView) view.findViewById(R.id.tv_good_content_username);
+        homepage_ll_wonderfulcontent_text = (TextView) view.findViewById(R.id.homepage_ll_wonderfulcontent_text);
         homepage_wonderfulcontent_support = (TextView) view.findViewById(R.id.homepage_wonderfulcontent_support);
-        homepage_iv_banner = (ImageView) view.findViewById(R.id.homepage_iv_banner);
-
         homepage_wonderfulcontent_comment = (TextView) view.findViewById(R.id.homepage_wonderfulcontent_comment);
+        homepage_iv_banner = (ImageView) view.findViewById(R.id.homepage_iv_banner);
+        iv_good_content = (ImageView) view.findViewById(R.id.iv_good_content);
         homepage_ll_goodanswer_first = (LinearLayout) view.findViewById(R.id.homepage_ll_goodanswer_first);
         homepage_ll_goodanswer_second = (LinearLayout) view.findViewById(R.id.homepage_ll_goodanswer_second);
-//        homepage_tables_gridview=(GridView)view.findViewById(R.id.homepage_tables_gridview);
+        homepage_ll_goodanswer_third = (LinearLayout) view.findViewById(R.id.homepage_ll_goodanswer_third);
+        ll_wonderfulcontent_hp = (LinearLayout) view.findViewById(R.id.ll_wonderfulcontent_hp);
+
+
         homepage_ll_goodanswer_first.setOnClickListener(this);
         homepage_ll_goodanswer_second.setOnClickListener(this);
+        homepage_ll_goodanswer_third.setOnClickListener(this);
+        ll_wonderfulcontent_hp.setOnClickListener(this);
+        homepage_wonderfulcontent_support.setOnClickListener(this);
         homepage_iv_banner.setOnClickListener(this);
         homepage_tv_more.setOnClickListener(this);
         search_et_content = (EditText) view.findViewById(R.id.search_et_content);
@@ -182,9 +200,6 @@ public class HomepageFragment extends BaseFragment implements OnClickListener {
         homepage_ll_viewGroup = (ViewGroup) view.findViewById(R.id.homepage_ll_viewGroup);
 
         fillToViews();
-//        getScreenDen();
-//        LIEWIDTH = dm.widthPixels / NUM;
-//        setValue();
 
         /**
          * 文字显示不全，隐藏点击查看 */
@@ -201,52 +216,19 @@ public class HomepageFragment extends BaseFragment implements OnClickListener {
                 //startActivity(BrowserUtils.getBrowserIntent(mContext, "http://weibo.com/u/5876672114"));
                 Intent intent=new Intent(getActivity(),LableDetaileExampleActivity.class);
                 intent.putExtra(LableDetaileExampleActivity.EXTRA_LABLE_ANSWER,1);
+                if(goodContentHp!=null) {
+                    intent.putExtra(LableDetaileExampleActivity.EXTRA_LABLE_ANSWER_CONTENT, goodContentHp.get(0).getUserName());
+                    intent.putExtra(LableDetaileExampleActivity.EXTRA_LABLE_ANSWER_CONTENTID, goodContentHp.get(0).getForumPostId() + "");
+                }
                 startActivity(intent);
             }
         };
         sinaSpanString.setSpan(clickableSpan1, sinaName.length() - 4, sinaName.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         textview_weibo_name.setText(sinaSpanString);
         textview_weibo_name.setMovementMethod(LinkMovementMethod.getInstance());
+        textview_weibo_name.setOnClickListener(this);
 
-//        textview_weibo_name.setOnClickListener(new OnClickListener() {
-//            boolean flag=true;
-//            @Override
-//            public void onClick(View view) {
-//                    if(flag){
-//                    flag = false;
-//                    textview_weibo_name.setEllipsize(null); // 展开
-//                    textview_weibo_name.setSingleLine(flag);
-//                }else{
-//                    flag = true;
-//                    textview_weibo_name.setEllipsize(TextUtils.TruncateAt.END); // 收缩
-//                }
-//            }
-//        });
     }
-//    private void setValue() {
-//        MyGridViewAdapter adapter = new MyGridViewAdapter(getActivity(), stringList);
-//        homepage_tables_gridview.setAdapter(adapter);
-//        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(adapter.getCount() * LIEWIDTH,
-//                LinearLayout.LayoutParams.WRAP_CONTENT);
-//        homepage_tables_gridview.setLayoutParams(params);// 设置GirdView布局参数,横向布局的关键
-//        homepage_tables_gridview.setColumnWidth(dm.widthPixels / NUM);// 设置列表项宽
-//        homepage_tables_gridview.setStretchMode(GridView.NO_STRETCH);
-//        int count = adapter.getCount();
-//        homepage_tables_gridview.setNumColumns(count);// 设置列数量=列表集合数
-////        adapter.notifyDataSetChanged();
-//                LOG.i("debug","position--"+homepage_tables_gridview.getFirstVisiblePosition());
-//        homepage_tables_gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-//                Toast.makeText(getActivity(),"您选择了："+stringList.get(position),Toast.LENGTH_LONG).show();
-//            }
-//        });
-//    }
-//
-//    private void getScreenDen() {
-//        dm = new DisplayMetrics();
-//        getActivity().getWindowManager().getDefaultDisplay().getMetrics(dm);
-//    }
 
     /**
      * 热门标签  手动轮播
@@ -257,20 +239,10 @@ public class HomepageFragment extends BaseFragment implements OnClickListener {
 
         List<View> advPics = new ArrayList<View>();
 
-//        ImageView img1 = new ImageView(getActivity());
-//        img1.setBackgroundResource(R.drawable.yk_community_tab_palceholder);
-//        advPics.add(img1);
-//
-//        ImageView img2 = new ImageView(getActivity());
-//        img2.setBackgroundResource(R.drawable.yk_community_tab_palceholder);
-//        advPics.add(img2);
+
 
         LayoutInflater mInflater = getActivity().getLayoutInflater();
-//        LinearLayout ll1=new LinearLayout(getActivity());
-//        ll1.setOrientation(LinearLayout.HORIZONTAL);
-//        ll1.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
-//        ll1.setWeightSum(3);
-//        ll1.setPadding(10,10,10,10);
+
         lableTvs = new ArrayList<TextView>();
         View view1 = mInflater.inflate(R.layout.linearlayout_item_choose_sticker, null);
         fillToTextview(view1);
@@ -290,9 +262,10 @@ public class HomepageFragment extends BaseFragment implements OnClickListener {
                 @Override
                 public void onClick(View v) {
 
-                    //Toast.makeText(getActivity(), stringList.get(15), Toast.LENGTH_SHORT).show();
                     Intent intent=new Intent(getActivity(),LableDetailsActivity.class);
                     intent.putExtra(LableDetailsActivity.EXTRA_LABLE,name);
+                    intent.putExtra(LableDetailsActivity.EXTRA_LABLE,name);
+                    intent.putExtra(LableDetailsActivity.EXTRA_LABLE_ID, 1+"");
                     startActivity(intent);
                 }
             });
@@ -424,6 +397,25 @@ public class HomepageFragment extends BaseFragment implements OnClickListener {
         lableTvs.add(tv1);
     }
 
+    /**注册回调*/
+    private ResponseCallback<Void> registerHandler = new ResponseCallback<Void>() {
+        @Override
+        public void onSuccess(Void data) {
+            hideWaitingUI();
+            AppContext.showToast("点赞成功");
+
+        }
+
+        @Override
+        public void onFailure(String status, String message) {
+            hideWaitingUI();
+            AppContext.showToast("点赞失败:" + message);
+            Dialog dialog = DialogFactory.getCommonAlertDialog(getActivity(),
+                    getString(R.string.alert), "点赞失败:" + message);
+            dialog.show();
+        }
+    };
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -431,7 +423,13 @@ public class HomepageFragment extends BaseFragment implements OnClickListener {
                 showEditPage();
                 break;
             case R.id.homepage_iv_banner:
-                Toast.makeText(getActivity(),"别急，到时候进入H5活动页面",Toast.LENGTH_SHORT).show();
+                if(bannerHp!=null&&bannerHp.size()!=0  ) {
+
+                    Uri uri = Uri.parse("market://details?id=" + getActivity().getPackageName());
+                    Intent intent = new Intent(Intent.ACTION_VIEW,uri);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
+                }
                 break;
             case R.id.homepage_tv_more:
                 showQrCodeDialog();
@@ -439,16 +437,45 @@ public class HomepageFragment extends BaseFragment implements OnClickListener {
             case R.id.search_et_content:
                 toCustomerListPage();
                 break;
+            case R.id.homepage_ll_wonderfulcontent_text:
+                Intent intents=new Intent(getActivity(),LableDetaileExampleActivity.class);
+                if(goodContentHp!=null) {
+                    intents.putExtra(LableDetaileExampleActivity.EXTRA_LABLE_ANSWER_CONTENTID, goodContentHp.get(0).getForumPostId() + "");
+                    intents.putExtra(LableDetaileExampleActivity.EXTRA_LABLE_ANSWER_CONTENT, goodContentHp.get(0).getUserName() + "");
+                }
+                startActivity(intents);
+                break;
+            case R.id.homepage_wonderfulcontent_support:
+                Toast.makeText(getActivity(),"点赞",Toast.LENGTH_SHORT).show();
+                //Api.support(1+"", registerHandler);
+                break;
             case R.id.homepage_ll_goodanswer_first:
                 Intent firstIntent=new Intent(getActivity(),LableDetaileExampleActivity.class);
                 firstIntent.putExtra(LableDetaileExampleActivity.EXTRA_LABLE_ANSWER,1);
+                firstIntent.putExtra(LableDetaileExampleActivity.EXTRA_LABLE_ANSWER_CONTENT,"康复师郝晓东");
                 startActivity(firstIntent);
                 break;
             case R.id.homepage_ll_goodanswer_second:
                 Intent secondIntent=new Intent(getActivity(),LableDetaileExampleActivity.class);
                 secondIntent.putExtra(LableDetaileExampleActivity.EXTRA_LABLE_ANSWER,1);
+                secondIntent.putExtra(LableDetaileExampleActivity.EXTRA_LABLE_ANSWER_CONTENT,"康复师郝晓东");
                 startActivity(secondIntent);
                 break;
+            case R.id.homepage_ll_goodanswer_third:
+                Intent thirdIntent=new Intent(getActivity(),LableDetaileExampleActivity.class);
+                thirdIntent.putExtra(LableDetaileExampleActivity.EXTRA_LABLE_ANSWER,1);
+                thirdIntent.putExtra(LableDetaileExampleActivity.EXTRA_LABLE_ANSWER_CONTENT,"康复师郝晓东");
+                startActivity(thirdIntent);
+                break;
+            case R.id.ll_wonderfulcontent_hp:
+                Intent intent=new Intent(getActivity(),LableDetaileExampleActivity.class);
+                if(goodContentHp!=null) {
+                    intent.putExtra(LableDetaileExampleActivity.EXTRA_LABLE_ANSWER_CONTENTID, goodContentHp.get(0).getForumPostId() + "");
+                    intent.putExtra(LableDetaileExampleActivity.EXTRA_LABLE_ANSWER_CONTENT, goodContentHp.get(0).getUserName() + "");
+                }
+                startActivity(intent);
+                break;
+
             default:
                 break;
         }
@@ -475,11 +502,6 @@ public class HomepageFragment extends BaseFragment implements OnClickListener {
     }
 
 
-
-
-
-
-
     /**
      * 显示更多标签页面
      */
@@ -492,18 +514,28 @@ public class HomepageFragment extends BaseFragment implements OnClickListener {
 
 
     /**
-     * 初始化数据，获取精彩内容
+     * 初始化数据
      */
     private void showEditPage() {
 
+
+        //获取首页banner列表
+        Api.getBannerContent(bannerContentHandler);
+        //获取首页精彩内容
+        Api.getWonderfulContent(wonderfulContentHandler);
+        //获取首页精彩解答
+        //Api.getWonderfulAnswer(wonderfulAnswerHandler);
+        //获取首页活动
+        //获取首页热门标签
+        Api.getHotLableContent(hotLableHandler);
         for (int i = 0; i < tab_lables.length; i++) {
             stringList.add(tab_lables[i]);
         }
-        Api.getWonderfulContent(wonderfulContentHandler);
+
     }
     //获取加载数据
     private void geneItems() {
-        for (int i = 0; i != 5; ++i) {
+        for (int i = 0; i != 3; ++i) {
             CommunityDetailsBean lable = new CommunityDetailsBean();
             lable.setUserTvName("周琳");
             Comlables.add(lable);
@@ -511,20 +543,132 @@ public class HomepageFragment extends BaseFragment implements OnClickListener {
     }
 
     /**
-     * 加载精彩内容回调
+     * 加载首页banner内容回调
+     */
+    private ResponseCallback<List<BannerBean>> bannerContentHandler = new ResponseCallback<List<BannerBean>>() {
+
+        @Override
+        public void onSuccess(List<BannerBean> data) {
+            hideWaitingUI();
+
+            bannerHp = new ArrayList<>();
+            for (BannerBean hp : data) {
+                bannerHp.add(hp);
+            }
+            //LOG.i("debug", "HpWonderfulContent---->" + bannerHp.get(0).getBanerPic()+"哈哈"+bannerHp.get(0).getActionUrl());
+            if(bannerHp.size()!=0&&bannerHp!=null) {
+
+                ImageLoader.getInstance().displayImage(bannerHp.get(0).getBanerPic(), homepage_iv_banner);
+            }
+        }
+        @Override
+        public void onFailure(String status, String message) {
+            LOG.i("debug", "[loadUserInfo]加载失败-->" + message + "   status-->" + status);
+            hideWaitingUI();
+            AppContext.showToast(message);
+        }
+    };
+    /**
+     * 加载首页热门标签回调
+     */
+    private ResponseCallback<List<TagHot>> hotLableHandler = new ResponseCallback<List<TagHot>>() {
+
+        @Override
+        public void onSuccess(List<TagHot> data) {
+            hideWaitingUI();
+
+            tagHot = new ArrayList<>();
+            for (TagHot hp : data) {
+                tagHot.add(hp);
+            }
+            LOG.i("debug", "HpWonderfulContent---->" + data.get(0).getTagName());
+            //ImageLoader.getInstance().displayImage(bannerHp.get(0).getBanerPic(), homepage_iv_banner);
+        }
+        @Override
+        public void onFailure(String status, String message) {
+            LOG.i("debug", "[loadUserInfo]加载失败-->" + message + "   status-->" + status);
+            hideWaitingUI();
+            AppContext.showToast(message);
+        }
+    };
+
+    /**
+     * 加载首页精彩内容回调
      */
     private ResponseCallback<List<HpWonderfulContent>> wonderfulContentHandler = new ResponseCallback<List<HpWonderfulContent>>() {
 
         @Override
         public void onSuccess(List<HpWonderfulContent> data) {
             hideWaitingUI();
-            List<HpWonderfulContent> mHp = new ArrayList<>();
+            goodContentHp = new ArrayList<>();
             for (HpWonderfulContent hp : data) {
-                mHp.add(hp);
+                goodContentHp.add(hp);
             }
-            LOG.i("debug", "HpWonderfulContent---->" + mHp.get(0).getTitle());
-        }
+            if(goodContentHp!=null&&goodContentHp.size()!=0) {
+                LOG.i("debug", "HpWonderfulContent---->" + data);
+                ImageLoader.getInstance().displayImage(goodContentHp.get(0).getRecommendPicUrl(), iv_good_content);
+                tv_good_content_title.setText(goodContentHp.get(0).getTitle());
+                tv_good_content_username.setText(goodContentHp.get(0).getUserName());
+                homepage_ll_wonderfulcontent_text.setText(goodContentHp.get(0).getContent()+"");
+                homepage_wonderfulcontent_comment.setText(goodContentHp.get(0).getAnswersNums() + "");
+                homepage_wonderfulcontent_support.setText(goodContentHp.get(0).getShareNum() + "");
 
+                if(goodContentHp.get(0).getTaglibs()!=null&&goodContentHp.get(0).getTaglibs().size()==1){
+                    tv_tag1.setText(goodContentHp.get(0).getTaglibs().get(0).getTagName());
+                    tv_tag1.setBackgroundResource(R.color.main_background_color);
+                }
+                if(goodContentHp.get(0).getTaglibs()!=null&&goodContentHp.get(0).getTaglibs().size()==2){
+                    tv_tag1.setText(goodContentHp.get(0).getTaglibs().get(0).getTagName());
+                    tv_tag1.setBackgroundResource(R.color.main_background_color);
+                    tv_tag2.setText(goodContentHp.get(0).getTaglibs().get(1).getTagName());
+                    tv_tag2.setBackgroundResource(R.color.main_background_color);
+                }
+                if(goodContentHp.get(0).getTaglibs()!=null&&goodContentHp.get(0).getTaglibs().size()==3){
+                    tv_tag1.setText(goodContentHp.get(0).getTaglibs().get(0).getTagName());
+                    tv_tag1.setBackgroundResource(R.color.main_background_color);
+                    tv_tag2.setText(goodContentHp.get(0).getTaglibs().get(1).getTagName());
+                    tv_tag2.setBackgroundResource(R.color.main_background_color);
+                    tv_tag3.setText(goodContentHp.get(0).getTaglibs().get(2).getTagName());
+                    tv_tag3.setBackgroundResource(R.color.main_background_color);
+                }
+                if(goodContentHp.get(0).getTaglibs()!=null&&goodContentHp.get(0).getTaglibs().size()==4){
+                    tv_tag1.setText(goodContentHp.get(0).getTaglibs().get(0).getTagName());
+                    tv_tag1.setBackgroundResource(R.color.main_background_color);
+                    tv_tag2.setText(goodContentHp.get(0).getTaglibs().get(1).getTagName());
+                    tv_tag2.setBackgroundResource(R.color.main_background_color);
+                    tv_tag3.setText(goodContentHp.get(0).getTaglibs().get(2).getTagName());
+                    tv_tag3.setBackgroundResource(R.color.main_background_color);
+                    tv_tag4.setText(goodContentHp.get(0).getTaglibs().get(3).getTagName());
+                    tv_tag4.setBackgroundResource(R.color.main_background_color);
+                }
+            }
+
+
+
+        }
+        @Override
+        public void onFailure(String status, String message) {
+            LOG.i("debug", "[loadUserInfo]加载失败-->" + message + "   status-->" + status);
+            hideWaitingUI();
+            AppContext.showToast(message);
+        }
+    };
+    /**
+     * 首页精彩解答回调
+     */
+    private ResponseCallback<String> wonderfulAnswerHandler = new ResponseCallback<String>() {
+
+        @Override
+        public void onSuccess(String data) {
+            hideWaitingUI();
+
+            /*bannerHp = new ArrayList<>();
+            for (BannerBean hp : data) {
+                bannerHp.add(hp);
+            }*/
+            LOG.i("debug", "HpWonderfulContent---->" + data);
+            //ImageLoader.getInstance().displayImage(bannerHp.get(0).getBanerPic(), homepage_iv_banner);
+        }
         @Override
         public void onFailure(String status, String message) {
             LOG.i("debug", "[loadUserInfo]加载失败-->" + message + "   status-->" + status);

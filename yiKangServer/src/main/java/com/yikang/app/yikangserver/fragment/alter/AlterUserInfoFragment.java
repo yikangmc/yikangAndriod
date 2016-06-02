@@ -26,7 +26,7 @@ import com.yikang.app.yikangserver.bean.User;
 import com.yikang.app.yikangserver.data.MyData;
 import com.yikang.app.yikangserver.fragment.BaseFragment;
 import com.yikang.app.yikangserver.fragment.SystemSelectPhotoFragment;
-import com.yikang.app.yikangserver.reciever.UserInfoAlteredReceiver;
+import com.yikang.app.yikangserver.receiver.UserInfoAlteredReceiver;
 import com.yikang.app.yikangserver.ui.AddressSearchActivity;
 import com.yikang.app.yikangserver.ui.AlterActivity;
 import com.yikang.app.yikangserver.utils.BitmapUtils;

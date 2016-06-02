@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="@color/main_tab_background_color"
+    android:background="@drawable/item_bg02"
     android:paddingBottom="10dp">
 
     <ImageView

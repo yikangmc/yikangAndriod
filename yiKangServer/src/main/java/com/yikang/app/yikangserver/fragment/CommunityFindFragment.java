@@ -1,6 +1,7 @@
 package com.yikang.app.yikangserver.fragment;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -25,6 +26,7 @@ import com.yikang.app.yikangserver.bean.CommunityDetailsBean;
 import com.yikang.app.yikangserver.ui.ComActivitiesActivity;
 import com.yikang.app.yikangserver.ui.LableDetaileExampleActivity;
 import com.yikang.app.yikangserver.ui.PersonalHomepageActivity;
+import com.yikang.app.yikangserver.ui.ProfessionalAnwserActivity;
 import com.yikang.app.yikangserver.ui.ProfessionalContentActivity;
 import com.yikang.app.yikangserver.utils.DensityUtils;
 import com.yikang.app.yikangserver.utils.T;
@@ -138,10 +140,10 @@ public class CommunityFindFragment extends BaseFragment implements OnClickListen
         img1.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(),
-                        ComActivitiesActivity.class);
+                Uri uri = Uri.parse("market://details?id=" + getActivity().getPackageName());
+                Intent intent = new Intent(Intent.ACTION_VIEW,uri);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
-                getActivity().overridePendingTransition(R.anim.trans_right_in, R.anim.trans_left_out);
             }
         });
         advPics.add(img1);
@@ -151,10 +153,10 @@ public class CommunityFindFragment extends BaseFragment implements OnClickListen
         img2.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(),
-                        ComActivitiesActivity.class);
+                Uri uri = Uri.parse("market://details?id=" + getActivity().getPackageName());
+                Intent intent = new Intent(Intent.ACTION_VIEW,uri);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
-                getActivity().overridePendingTransition(R.anim.trans_right_in, R.anim.trans_left_out);
             }
         });
         advPics.add(img2);
@@ -164,10 +166,10 @@ public class CommunityFindFragment extends BaseFragment implements OnClickListen
         img3.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(),
-                        ComActivitiesActivity.class);
+                Uri uri = Uri.parse("market://details?id=" + getActivity().getPackageName());
+                Intent intent = new Intent(Intent.ACTION_VIEW,uri);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
-                getActivity().overridePendingTransition(R.anim.trans_right_in, R.anim.trans_left_out);
             }
         });
         advPics.add(img3);
@@ -177,10 +179,10 @@ public class CommunityFindFragment extends BaseFragment implements OnClickListen
         img4.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(),
-                        ComActivitiesActivity.class);
+                Uri uri = Uri.parse("market://details?id=" + getActivity().getPackageName());
+                Intent intent = new Intent(Intent.ACTION_VIEW,uri);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
-                getActivity().overridePendingTransition(R.anim.trans_right_in, R.anim.trans_left_out);
             }
         });
         advPics.add(img4);
@@ -246,6 +248,24 @@ public class CommunityFindFragment extends BaseFragment implements OnClickListen
         } catch (InterruptedException e) {
 
         }
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        isContinue = false;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        isContinue = true;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        isContinue = false;
     }
 
     private final Handler viewHandler = new Handler() {
@@ -432,7 +452,7 @@ public class CommunityFindFragment extends BaseFragment implements OnClickListen
      */
     private void showQrCodeDialog() {
         Intent intent = new Intent(getActivity(),
-                ProfessionalContentActivity.class);
+                ProfessionalAnwserActivity.class);
         intent.putExtra("fromCommunityFind", 2);
         startActivity(intent);
         getActivity().overridePendingTransition(R.anim.trans_right_in, R.anim.trans_left_out);
@@ -444,7 +464,7 @@ public class CommunityFindFragment extends BaseFragment implements OnClickListen
      */
     private void showEditPage() {
         Intent intent = new Intent(getActivity(),
-                ProfessionalContentActivity.class);
+                ProfessionalAnwserActivity.class);
         intent.putExtra("fromCommunityFind", 1);
         startActivity(intent);
         getActivity().overridePendingTransition(R.anim.trans_right_in, R.anim.trans_left_out);

@@ -15,17 +15,17 @@
         android:padding="5dp">
         <ImageView
             android:id="@+id/lables_details_iv_user"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:scaleType="fitXY"
-            android:src="@drawable/yk_community_tab_recommend_user"
+
             />
         <TextView
             android:id="@+id/lables_details_tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:text="木瓜"
+            android:text=""
             android:textSize="@dimen/common_text_size"
             android:textColor="@color/homepage_title_right_text_color"/>
         <TextView
@@ -35,9 +35,9 @@
             android:background="@drawable/yk_lable_tab_zhicheng_blue"
             android:layout_marginLeft="8dp"
             android:padding="3dp"
-            android:textSize="10sp"
+            android:textSize="8sp"
             android:textColor="@color/white"
-            android:text="运动员"/>
+            android:text="康复师"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -48,7 +48,7 @@
                 android:id="@+id/lables_details_tv_pushtime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2016/04261816"
+                android:text=""
                 android:textSize="@dimen/common_text_size_middle_small"
                 android:textColor="@color/homepage_title_right_text_color"
                 android:layout_gravity="center_vertical"/>
@@ -79,30 +79,34 @@
         <ImageView
             android:id="@+id/lables_details_iv_thumnnail1"
             android:layout_width="0dp"
+            android:padding="5dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/yk_all_tab_placeholder_big"
+
             android:scaleType="centerInside"/>
         <ImageView
             android:id="@+id/lables_details_iv_thumnnail2"
             android:layout_width="0dp"
+            android:padding="5dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/yk_all_tab_placeholder_big"
+
             android:scaleType="centerInside"/>
         <ImageView
             android:id="@+id/lables_details_iv_thumnnail3"
             android:layout_width="0dp"
+            android:padding="5dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/yk_all_tab_placeholder_big"
+
             android:scaleType="centerInside"/>
         <ImageView
             android:id="@+id/lables_details_iv_thumnnail4"
             android:layout_width="0dp"
+            android:padding="5dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/yk_all_tab_placeholder_big"
+
             android:scaleType="centerInside"/>
     </LinearLayout>
 
@@ -119,7 +123,6 @@
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:paddingTop="5dp"
-            android:text="@string/wonderful_info_tip"
             android:textSize="12sp" />
     </LinearLayout>
 
@@ -145,53 +148,55 @@
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/tv_tag1"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:paddingTop="5dp"
                 android:paddingBottom="5dp"
                 android:textSize="11dp"
-                android:text="瘦身"
+
                 android:layout_marginRight="5dp"
-                android:background="@color/main_background_color"
+
                 android:gravity="center"/>
             <TextView
+                android:id="@+id/tv_tag2"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginRight="5dp"
-                android:background="@color/main_background_color"
+
                 android:gravity="center"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:paddingTop="5dp"
                 android:paddingBottom="5dp"
-                android:text="减肥"
+
                 android:textSize="11dp"/>
             <TextView
+                android:id="@+id/tv_tag3"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginRight="5dp"
-                android:background="@color/main_background_color"
+
                 android:gravity="center"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:paddingTop="5dp"
                 android:paddingBottom="5dp"
-                android:text="健身"
+
                 android:textSize="11dp"/>
             <TextView
+                android:id="@+id/tv_tag4"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginRight="5dp"
-                android:background="@color/main_background_color"
+
                 android:gravity="center"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:paddingTop="5dp"
                 android:paddingBottom="5dp"
-                android:text="塑形"
                 android:textSize="11dp"/>
             <TextView
                 android:layout_width="0dp"
@@ -228,12 +233,13 @@
             android:orientation="horizontal"
             android:gravity="center">
             <TextView
+                android:id="@+id/lable_details_tv_support"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
                 android:drawableLeft="@drawable/yk_all_tab_support"
                 android:drawablePadding="4dp"
-                android:text="3288" />
+               />
         </LinearLayout>
 
         <LinearLayout
@@ -244,12 +250,13 @@
             android:orientation="horizontal"
             android:gravity="center">
             <TextView
+                android:id="@+id/lable_details_tv__comment"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:drawableLeft="@drawable/yk_all_tab_comment"
                 android:drawablePadding="4dp"
                 android:gravity="center_vertical"
-                android:text="3288" />
+               />
         </LinearLayout>
 
 

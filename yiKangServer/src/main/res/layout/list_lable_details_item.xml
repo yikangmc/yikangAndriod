@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="@color/main_tab_background_color"
+    android:background="@drawable/item_bg02"
     android:padding="5dp">
 
       <LinearLayout
@@ -94,28 +94,28 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/yk_all_tab_placeholder_big"
+
             android:scaleType="centerInside"/>
         <ImageView
             android:id="@+id/lables_details_iv_thumnnail2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/yk_all_tab_placeholder_big"
+
             android:scaleType="centerInside"/>
         <ImageView
             android:id="@+id/lables_details_iv_thumnnail3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/yk_all_tab_placeholder_big"
+
             android:scaleType="centerInside"/>
         <ImageView
             android:id="@+id/lables_details_iv_thumnnail4"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/yk_all_tab_placeholder_big"
+
             android:scaleType="centerInside"/>
     </LinearLayout>
 
@@ -226,12 +226,13 @@
             android:orientation="horizontal"
             android:gravity="center">
             <TextView
+                android:id="@+id/lable_details_tv_support"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
                 android:drawableLeft="@drawable/yk_all_tab_support"
                 android:drawablePadding="4dp"
-                android:text="3288" />
+               />
         </LinearLayout>
 
         <LinearLayout
@@ -247,7 +248,7 @@
                 android:drawableLeft="@drawable/yk_all_tab_comment"
                 android:drawablePadding="4dp"
                 android:gravity="center_vertical"
-                android:text="3288" />
+               />
         </LinearLayout>
 
 

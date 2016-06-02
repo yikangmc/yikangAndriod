@@ -13,7 +13,7 @@ import com.yikang.app.yikangserver.api.callback.ResponseCallback;
 import com.yikang.app.yikangserver.api.Api;
 import com.yikang.app.yikangserver.application.AppContext;
 import com.yikang.app.yikangserver.dialog.DialogFactory;
-import com.yikang.app.yikangserver.interf.UINetwork;
+import com.yikang.app.yikangserver.interfaces.UINetwork;
 import com.yikang.app.yikangserver.service.UpdateService;
 
 import java.io.Serializable;

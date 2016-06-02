@@ -19,6 +19,8 @@ import com.yikang.app.yikangserver.application.AppContext;
 
 import java.io.File;
 
+import cn.jpush.android.api.JPushInterface;
+
 public class SplashActivity extends BaseActivity {
 	private Handler mhHandler;
 
@@ -36,7 +38,19 @@ public class SplashActivity extends BaseActivity {
 		}, 3000);
 
 	}
-	
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		JPushInterface.onResume(getApplicationContext());
+
+	}
+
+	@Override
+	protected void onPause() {
+		super.onPause();
+		JPushInterface.onPause(getApplicationContext());
+	}
 
 	@TargetApi(19)
 	protected void initContent() {
