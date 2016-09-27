@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/root_layout"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical" >
+
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:id="@+id/viewpager_layout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal" >
+                    <ImageButton
+                        android:id="@+id/ibtn_title_sign"
+                        android:layout_width="60dp"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="8dp"
+                        android:layout_gravity="center"
+                        android:background="@null"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="30dp"
+                        android:src="@drawable/item_sign" />
+
+                    <TextView
+                        android:id="@+id/community_tv_top_left"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1.0"
+                        android:gravity="center|right"
+                        android:paddingRight="12dp"
+                        android:text="社区"
+                        android:textColor="@color/community_top_lable_color"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/community_tv_top_right"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1.0"
+                        android:gravity="center|left"
+                        android:paddingLeft="12dp"
+                        android:text="关注"
+                        android:textColor="#1F1F1F"
+                        android:textSize="17sp" />
+                    <ImageButton
+                        android:layout_width="60dp"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight= "8dp"
+                        android:background="@null"
+                        android:paddingLeft="5dp"
+                        android:layout_gravity="center"
+                        android:paddingRight="30dp"
+                        android:visibility="invisible"
+                        android:src="@drawable/item_sign" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/view_inviteCustomer_item_indicator"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="matrix"
+                    android:layout_gravity="center"
+                    android:src="@drawable/yk_community_tab_tiao_select" />
+            </LinearLayout>
+
+            <com.yikang.app.yikangserver.view.NoScrollViewPager
+                android:id="@+id/vp_inviteCustomer_item_pager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:flipInterval="30"
+                android:persistentDrawingCache="none" />
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

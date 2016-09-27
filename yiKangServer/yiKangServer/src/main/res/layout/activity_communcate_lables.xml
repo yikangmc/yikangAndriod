@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:background="@color/main_background_color"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/include_title_bar" />
+    <LinearLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:orientation="horizontal">
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tablayout"
+        app:tabIndicatorColor="#0faadd"
+        android:background="@color/main_background_color"
+        app:tabIndicatorHeight="4px"
+        app:tabMode="scrollable"
+        app:tabGravity="center"
+        app:tabTextColor="#656565"
+        app:tabSelectedTextColor="#0faadd"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="40dp">
+    </android.support.design.widget.TabLayout>
+    <ImageView
+        android:background="@color/main_background_color"
+        android:id="@+id/more_lable_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:paddingRight="15dp"
+
+        android:src="@drawable/yk_community_professional_content_add"/>
+</LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/main_background_color"
+        android:fitsSystemWindows="true"
+        android:layout_weight="1">
+    </android.support.v4.view.ViewPager>
+
+</LinearLayout>
+

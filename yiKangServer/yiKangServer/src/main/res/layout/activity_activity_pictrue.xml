@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/main_background_color"
+    android:divider="@drawable/line_grey_horizontal"
+    android:orientation="vertical"
+    android:showDividers="middle">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <include layout="@layout/include_title_bar" />
+            <LinearLayout
+                android:id="@+id/ll_theme"
+                style="@style/style_common_item.linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+               >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="你可以上传活动海报、场地等图片吸引更多报名者哦~"
+                    android:textSize="13sp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textColor="#b5b5b5"/>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/iv_activity_pictrue"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:scaleType="fitXY"
+                android:padding="5dp"
+                android:background="@drawable/allradius"
+                />
+
+        </LinearLayout>
+
+    <Button
+        android:id="@+id/bt_choose_pictrue"
+        style="@style/style_common_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="30dp"
+        android:text="上传宣传图" />
+
+</LinearLayout>

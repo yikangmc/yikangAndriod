@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="120dp"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/item_bg02"
+
+        >
+
+        <ImageView
+            android:id="@+id/homepage_hot_iv1"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+            android:padding="3dp"
+            android:visibility="gone"
+            android:src="@drawable/default_jiajia" />
+
+        <TextView
+            android:id="@+id/homepage_hot_textview1"
+            android:layout_width="109dp"
+            android:layout_height="31dp"
+            android:layout_gravity="center|right"
+            android:gravity="center"
+            android:minHeight="10dp"
+            android:background="@drawable/allradius_lable_bag"
+            android:textColor="@color/gray_lable"
+            android:textSize="12sp"/>
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:background="@drawable/item_bg02"
+
+       >
+
+        <ImageView
+            android:id="@+id/homepage_hot_iv2"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+            android:padding="3dp"
+            android:visibility="gone"
+            android:src="@drawable/default_jiajia" />
+
+        <TextView
+            android:id="@+id/homepage_hot_textview2"
+            android:layout_width="109dp"
+            android:layout_height="31dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:minHeight="10dp"
+
+            android:background="@drawable/allradius_lable_bag"
+            android:textColor="@color/gray_lable"
+            android:textSize="12sp" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/item_bg02"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/homepage_hot_iv3"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+            android:padding="3dp"
+            android:visibility="gone"
+            android:src="@drawable/default_jiajia" />
+
+        <TextView
+            android:id="@+id/homepage_hot_textview3"
+            android:layout_width="109dp"
+            android:layout_height="31dp"
+            android:layout_gravity="center|left"
+            android:gravity="center"
+            android:minHeight="10dp"
+            android:background="@drawable/allradius_lable_bag"
+            android:textColor="@color/gray_lable"
+            android:textSize="12sp" />
+    </FrameLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+    <FrameLayout
+        android:layout_width="0dp"
+        android:background="@drawable/item_bg02"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/homepage_hot_iv4"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+            android:padding="3dp"
+            android:visibility="gone"
+            android:src="@drawable/default_jiajia" />
+
+        <TextView
+            android:id="@+id/homepage_hot_textview4"
+            android:layout_width="109dp"
+            android:layout_height="31dp"
+            android:layout_gravity="center|right"
+            android:gravity="center"
+            android:minHeight="10dp"
+            android:padding="5dp"
+            android:background="@drawable/allradius_lable_bag"
+            android:textColor="@color/gray_lable"
+            android:textSize="12sp" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:background="@drawable/item_bg02"
+        android:layout_height="match_parent"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        >
+
+        <ImageView
+            android:id="@+id/homepage_hot_iv5"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+            android:padding="3dp"
+            android:visibility="gone"
+            android:src="@drawable/default_jiajia" />
+
+        <TextView
+            android:id="@+id/homepage_hot_textview5"
+            android:layout_width="109dp"
+            android:layout_height="31dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:minHeight="10dp"
+            android:padding="5dp"
+            android:background="@drawable/allradius_lable_bag"
+            android:textColor="@color/gray_lable"
+            android:textSize="12sp"/>
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:background="@drawable/item_bg02"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/homepage_hot_iv6"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+            android:padding="3dp"
+            android:visibility="gone"
+            android:src="@drawable/default_jiajia" />
+
+        <TextView
+            android:id="@+id/homepage_hot_textview6"
+            android:layout_width="109dp"
+            android:layout_height="31dp"
+            android:layout_gravity="center|left"
+            android:gravity="center"
+            android:minHeight="10dp"
+            android:padding="5dp"
+            android:background="@drawable/allradius_lable_bag"
+            android:textColor="@color/gray_lable"
+            android:textSize="12sp" />
+    </FrameLayout>
+    </LinearLayout>
+</LinearLayout>

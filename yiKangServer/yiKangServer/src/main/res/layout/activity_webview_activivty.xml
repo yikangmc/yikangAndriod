@@ -1,0 +1,17 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:orientation="vertical"
+android:fitsSystemWindows="true"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@color/common_page_background">
+
+
+<include layout="@layout/include_title_bar"/>
+
+<WebView
+    android:id="@+id/webView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_page_background"/>
+
+</LinearLayout>

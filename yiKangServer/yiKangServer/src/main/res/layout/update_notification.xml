@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#ffffffff" >
+
+    <ImageView
+        android:id="@+id/notification_update_launcher"
+        android:layout_width="50.0dip"
+        android:layout_height="50.0dip"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="5.0dip"
+        android:layout_marginLeft="5.0dip"
+        android:layout_marginRight="5.0dip"
+        android:layout_marginTop="5.0dip"
+        android:background="#ffffffff"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:id="@+id/notification_update_state"
+        android:layout_width="fill_parent"
+        android:layout_height="32.0dip"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/notification_update_launcher"
+        android:gravity="bottom|left|center"
+        android:text="正在下载佳佳康复"
+        android:textColor="#aa333333"
+        android:textSize="16.0sp" />
+
+    <ProgressBar
+        android:id="@+id/notification_update_progress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="2.0dip"
+        android:layout_below="@id/notification_update_state"
+        android:layout_marginRight="2.0dip"
+        android:layout_toRightOf="@id/notification_update_launcher"
+        android:progressDrawable="@drawable/notification_progress_color_style" />
+
+    <TextView
+        android:id="@+id/notification_update_progress_percent"
+        android:layout_width="fill_parent"
+        android:layout_height="30.0dip"
+        android:layout_below="@id/notification_update_progress"
+        android:layout_toRightOf="@id/notification_update_launcher"
+        android:gravity="left|center"
+        android:text="下载完成"
+        android:textColor="#aa333333"
+        android:textSize="14.0sp" />
+
+</RelativeLayout>

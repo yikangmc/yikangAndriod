@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/main_background_color"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical" >
+
+    <include layout="@layout/include_title_bar" />
+    <com.yikang.app.yikangserver.view.XListView
+        android:id="@+id/lable_detals_listview"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:divider="@null"
+        android:layout_height="wrap_content"
+        android:fadingEdge="none"
+        android:overScrollMode="never"
+        />
+</LinearLayout>

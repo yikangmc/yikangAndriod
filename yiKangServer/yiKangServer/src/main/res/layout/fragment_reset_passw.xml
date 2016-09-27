@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_page_background" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:padding="30dp"
+        android:paddingBottom="100dp" >
+
+        <EditText
+            android:id="@+id/edt_register_phoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/shape_edit_bg"
+            android:hint="@string/reset_passw_phone_tip"
+            android:textSize="13sp"
+            android:textCursorDrawable="@drawable/richtextedit_cursor_shape"
+            android:inputType="phone"
+            android:padding="12dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/edt_register_verify_code"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_edit_bg"
+                android:hint="@string/register_verify_code_hint"
+                android:textCursorDrawable="@drawable/richtextedit_cursor_shape"
+                android:textSize="13sp"
+                android:inputType="phone"
+                android:padding="12dp" />
+
+            <TextView
+                android:id="@+id/tv_register_get_verifyCode"
+                android:layout_width="140dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:gravity="center"
+
+                android:text="@string/register_get_verify_code"
+                android:textSize="13sp"
+                android:textColor="@color/community_activity_tv_color" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/edt_register_passw"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="30dp"
+            android:textSize="13sp"
+            android:background="@drawable/shape_edit_bg"
+            android:hint="@string/reset_passw_passw"
+            android:inputType="textPassword"
+            android:textCursorDrawable="@drawable/richtextedit_cursor_shape"
+            android:padding="12dp" />
+
+        <EditText
+            android:id="@+id/edt_register_passw_again"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/shape_edit_bg"
+            android:hint="@string/set_password_again_hint"
+            android:textSize="13sp"
+            android:textCursorDrawable="@drawable/richtextedit_cursor_shape"
+            android:inputType="textPassword"
+            android:padding="12dp" />
+
+        <Button
+            android:id="@+id/bt_register_next"
+            style="@style/style_common_btn"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/confirm" />
+    </LinearLayout>
+
+</ScrollView>

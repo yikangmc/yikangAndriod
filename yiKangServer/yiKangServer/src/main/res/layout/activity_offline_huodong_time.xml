@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:divider="@drawable/line_grey_horizontal"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:background="@color/main_background_color"
+    android:showDividers="middle">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:background="@color/main_background_color"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/main_background_color"
+            android:orientation="vertical">
+
+            <include layout="@layout/include_title_bar" />
+            <LinearLayout
+                android:id="@+id/ll_baoming_start"
+                style="@style/style_common_item.linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:drawablePadding="5dp"
+                    android:text="活动开始"
+                    android:textColor="@color/common_text_color"
+                    android:textSize="@dimen/common_text_size" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/tv_baoming_start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="10dp"
+                    android:drawableRight="@drawable/ic_arrow_right_blue"
+                    android:gravity="center"
+                    android:textColor="@color/common_text_grey"
+                    android:textSize="@dimen/common_text_size_small" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#ffffff">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginRight="13dp"
+                    android:background="@color/homepage_view_bg_color"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_baoming_end"
+                style="@style/style_common_item.linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:drawablePadding="5dp"
+                    android:text="活动结束"
+                    android:textColor="@color/common_text_color"
+                    android:textSize="@dimen/common_text_size" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/tv_baoming_end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="10dp"
+                    android:drawableRight="@drawable/ic_arrow_right_blue"
+                    android:gravity="center"
+
+                    android:textColor="@color/common_text_grey"
+                    android:textSize="@dimen/common_text_size_small" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

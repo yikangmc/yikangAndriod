@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:divider="@drawable/line_grey_horizontal"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:showDividers="middle">
+
+    <include layout="@layout/include_title_bar" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="1">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="请在电脑上编辑"
+            android:layout_weight="2"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="#656565"
+            android:textSize="13sp"
+            android:drawableTop="@drawable/computer"
+            android:drawablePadding="10dp"
+          />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_bianji"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/community_activity_tv_color"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="已在电脑上完成编辑"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </LinearLayout>
+</LinearLayout>

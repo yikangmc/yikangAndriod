@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#f6f6f6"
+              android:fitsSystemWindows="true"
+              android:orientation="vertical">
+
+    <include layout="@layout/include_title_bar"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <HorizontalScrollView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/main_background_color"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:padding="4dp">
+
+                <GridView
+                    android:id="@+id/community_professional_gridview"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/controller_lables_gv_min_height"
+                    android:cacheColorHint="@android:color/transparent"
+                    android:gravity="center_vertical"
+                    android:listSelector="@android:color/transparent"
+                    android:scrollbars="none"/>
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <ImageView
+            android:id="@+id/professional_add_lable_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:padding="5dp"
+            android:src="@drawable/yk_community_professional_content_add"/>
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.yikang.app.yikangserver.view.XListView
+            android:id="@+id/community_professional_listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@color/main_background_color"
+            android:dividerHeight="10dp"
+            android:gravity="center_horizontal"
+            android:fadingEdge="none"
+            android:overScrollMode="never"/>
+
+        <LinearLayout
+            android:id="@+id/community_professional_ll_posting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="15dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/community_professional_iv_posting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/selector_lable_posting"/>
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

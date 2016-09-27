@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_page_background"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_title_bar" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:divider="@drawable/line_grey_horizontal"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/edt_login_userId"
+            style="@style/style_common_edt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/login_username_hint"
+            android:textCursorDrawable="@drawable/richtextedit_cursor_shape"
+            android:textSize="13sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/common_page_background" />
+
+        <EditText
+            android:id="@+id/edt_login_passw"
+            style="@style/style_common_edt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/login_passw_hint"
+            android:inputType="textPassword"
+            android:textCursorDrawable="@drawable/richtextedit_cursor_shape"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/bt_login_login"
+        style="@style/style_common_btn"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/login_title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/tv_login_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:text="@string/login_register_entry"
+            android:textColor="@color/common_text_grey" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tv_login_forget"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:text="@string/login_forget_entry"
+            android:textColor="@color/common_text_grey" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:drawableLeft="@drawable/line"
+        android:drawableRight="@drawable/line"
+        android:drawablePadding="8dp"
+        android:text="使用其他账号登录"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="30dp">
+
+        <TextView
+            android:id="@+id/bt_third_party_login_wechat_sina"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:drawablePadding="10dp"
+            android:drawableTop="@drawable/item_sina"
+            android:layout_height="wrap_content"
+            android:background="@drawable/item_bg03"
+            android:text="微博" />
+
+        <TextView
+            android:id="@+id/bt_third_party_login"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:drawablePadding="10dp"
+            android:drawableTop="@drawable/item_qq"
+            android:layout_height="wrap_content"
+            android:background="@drawable/item_bg03"
+            android:text="QQ" />
+
+        <TextView
+            android:id="@+id/bt_third_party_login_wechat"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:drawablePadding="10dp"
+            android:drawableTop="@drawable/item_wechat"
+            android:layout_height="wrap_content"
+            android:background="@drawable/item_bg03"
+            android:text="微信" />
+    </LinearLayout>
+
+
+</LinearLayout>

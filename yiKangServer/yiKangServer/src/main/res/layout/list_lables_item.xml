@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/item_bg02"
+   >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+       >
+
+        <com.yikang.app.yikangserver.view.CircleImageView
+            android:id="@+id/iv_mine_avatar"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:contentDescription="@null"
+          />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="vertical"
+           >
+
+            <TextView
+                android:id="@+id/lables_tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="佳佳官方通知"
+                android:textColor="#787878"
+                android:textSize="13sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:gravity="right"
+            android:orientation="vertical"
+
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/lables_tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10天前"
+                android:layout_marginRight="15dp"
+                android:textColor="#787878"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/lables_tv_focusnum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="143条帖子"
+                android:textColor="@color/community_top_lable_color"
+                android:textSize="@dimen/common_text_size_middle_small" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/lables_tv_tiezi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:layout_marginLeft="55dp"
+        android:text="2016年度康复高峰论坛即将开幕！"
+        android:textColor="#505050"
+        android:textSize="13sp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="8dp"
+            android:background="@color/homepage_view_bg_color" />
+    </LinearLayout>
+</LinearLayout>

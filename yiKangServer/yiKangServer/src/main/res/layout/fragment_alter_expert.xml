@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.yikang.app.yikangserver.fragment.alter.AlterExpertFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="@dimen/common_text_size"
+        android:text="请选择自己擅长的方向，最多只能选择四项" />
+
+    <com.yikang.app.yikangserver.view.tag.TagFlowLayout
+        android:id="@+id/id_tfl_expert"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        app:max_select="-1"/>
+
+</LinearLayout>

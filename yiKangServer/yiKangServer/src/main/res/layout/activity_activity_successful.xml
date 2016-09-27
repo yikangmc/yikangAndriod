@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background_color"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_title_bar" />
+
+    <LinearLayout
+        android:id="@+id/ll_no_message"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+       >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|top"
+            android:layout_marginTop="80dp"
+            android:text="报名成功"
+            android:textColor="#0faadd"
+            android:textSize="16sp"
+            android:drawablePadding="15dp"
+            android:drawableTop="@drawable/successful_activity" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="31dp"
+            android:gravity="center"
+            android:text="感谢您参加本次活动,您可以返回活动首页\n与更多好友互动"
+            android:textColor="#656565"
+            android:textSize="13sp" />
+        <Button
+            android:id="@+id/bt_backto_activity"
+            android:layout_marginTop="17dp"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            style="@style/style_common_btn"
+            android:text="回到活动"
+          />
+    </LinearLayout>
+</LinearLayout>
+

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="5dp">
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/lables_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="如何康复？"
+            android:textColor="#1f1f1f"
+            android:layout_marginBottom="15dp"
+            android:textSize="@dimen/common_text_size" />
+        <com.yikang.app.yikangserver.view.MyGridView
+            android:id="@+id/community_mine_lables_gridview"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:columnWidth="@dimen/professional_lable_min_width"
+            android:horizontalSpacing="5dp"
+            android:numColumns="4"
+            android:verticalSpacing="5dp"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="20dp"
+            android:background="#dcdcdc"
+            />
+    </LinearLayout>
+
+
+
+</LinearLayout>

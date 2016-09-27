@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/item_bg02"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/common_page_background"></LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:background="@color/main_tab_background_color"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/lables_tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/homepage_title_left_text_color"
+                android:textSize="@dimen/common_text_size" />
+
+            <TextView
+                android:id="@+id/lables_tv_tiezi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="left"
+                android:text="”
+"
+                android:textColor="@color/homepage_title_right_text_color"
+                android:textSize="@dimen/common_text_size_middle" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:orientation="vertical"
+
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/lables_tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:text="10天前"
+                android:textColor="@color/homepage_title_right_text_color"
+                android:textSize="@dimen/common_text_size_middle_small" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="143条帖子"
+                android:textColor="@color/community_top_lable_color"
+                android:textSize="@dimen/common_text_size_middle_small"
+                android:visibility="invisible" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

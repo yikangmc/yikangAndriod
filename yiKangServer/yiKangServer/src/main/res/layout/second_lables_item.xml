@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="75dp"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:background="@drawable/item_bg02"
+    android:padding="5dp">
+
+    <ImageView
+        android:id="@+id/iv_mine_avatar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="15dp"
+        android:contentDescription="@null"
+        android:scaleType="fitXY"
+      />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:padding="5dp">
+        <TextView
+            android:id="@+id/lables_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="佳佳官方通知"
+            android:textSize="@dimen/common_text_size"
+            android:textColor="#333333"/>
+        <TextView
+            android:id="@+id/lables_tv_tiezi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="@dimen/common_text_size_middle"
+            android:textColor="#656565"
+            android:text="2016年度康复高峰论坛即将开幕！"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.6"
+        android:orientation="vertical"
+        android:gravity="right"
+
+        android:padding="5dp">
+        <TextView
+            android:id="@+id/lables_tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10天前"
+            android:textSize="@dimen/common_text_size_middle_small"
+            android:textColor="#656565"/>
+
+        <TextView
+            android:id="@+id/lables_tv_focusnum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="143条帖子"
+            android:layout_marginTop="5dp"
+            android:textSize="@dimen/common_text_size_middle_small"
+            android:textColor="#0faadd"
+           />
+
+    </LinearLayout>
+
+</LinearLayout>

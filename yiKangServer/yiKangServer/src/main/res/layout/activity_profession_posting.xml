@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/common_page_background"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:gravity="center"
+            android:text="取消"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center_vertical"
+            android:text="发布专业内容"
+            android:textSize="15sp"
+            />
+
+        <TextView
+            android:id="@+id/activity_profession_tv_send"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="8dp"
+            android:gravity="center"
+            android:text="发送"
+            android:textColor="@drawable/text_while"
+            android:textSize="12sp"/>
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:layout_marginTop="5dp"
+        android:padding="10dp"
+        android:background="@color/white">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="100dp"
+                android:layout_margin="8dp"
+                android:background="@null"
+                android:gravity="left|top"
+                android:textCursorDrawable="@drawable/richtextedit_cursor_shape"
+                android:hint="分享您的那点新鲜事儿...">
+            </EditText>
+            <ImageView
+                android:id="@+id/profession_iv_titlephoto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/yk_community_tab_palceholder"
+                />
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="100dp"
+                android:layout_margin="8dp"
+                android:background="@null"
+                android:gravity="left|top"
+                android:textCursorDrawable="@drawable/richtextedit_cursor_shape"
+                android:hint="分享您的那点新鲜事儿...">
+            </EditText>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="10dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="为专业内容添加标签"/>
+
+        <GridView
+            android:id="@+id/lable_gv_test"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:horizontalSpacing="3dp"
+            android:numColumns="4"
+            android:verticalSpacing="5dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="上传一张标题图"/>
+
+        <ImageView
+            android:id="@+id/profession_iv_upload_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/yk_community_professional_upload"/>
+
+    </LinearLayout>
+
+</LinearLayout>

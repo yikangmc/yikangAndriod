@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/allradius_white">
+
+    <LinearLayout
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/allradius_white"
+        android:layout_marginBottom="40dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/update_next_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="right|bottom"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:text=""
+            android:background="@null"
+            android:drawableRight="@drawable/cancle_update"
+            android:textColor="#ffffff"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/update_notification_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="有新版本啦"
+            android:drawableTop="@drawable/download"
+            android:drawablePadding="16dp"
+            android:textColor="#0faadd"
+            android:textSize="17sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginTop="12dp"
+            android:gravity="top|left"
+            android:text="更新内容"
+            android:layout_marginLeft="15dp"
+            android:textColor="#606060"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/update_notification_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="15dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="40dp"
+            android:gravity="top|left"
+            android:text=""
+            android:textColor="#606060"
+            android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/update_now"
+                android:layout_width="115.0dip"
+                android:layout_height="35.0dip"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center"
+                style="@style/style_common_btns"
+                android:text="立即升级"
+                android:textColor="#ffffff"
+                android:textSize="16sp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

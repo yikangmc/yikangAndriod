@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.yikang.app.yikangserver.view.DeletableEditText xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:cursorVisible="true"
+    android:hint="请填写主要内容（必填）"
+    android:textColorHint="#969696"
+    android:textSize="13dp"
+    android:lineSpacingExtra="8dp"
+    android:textCursorDrawable="@drawable/richtextedit_cursor_shape" />
+

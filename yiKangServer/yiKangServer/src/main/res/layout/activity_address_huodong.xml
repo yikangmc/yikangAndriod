@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:divider="@drawable/line_grey_horizontal"
+    android:orientation="vertical"
+    android:background="@color/main_background_color"
+    android:fitsSystemWindows="true"
+    android:showDividers="middle">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:background="@color/main_background_color"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:background="@color/main_background_color"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/include_title_bar" />
+            <LinearLayout
+                android:id="@+id/ll_theme"
+                style="@style/style_common_item.linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/tv_theme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textCursorDrawable="@drawable/richtextedit_cursor_shape"
+                    android:drawablePadding="5dp"
+                    android:hint="请输入活动地点"
+                    android:textColor="@color/common_text_color"
+                    android:textSize="@dimen/common_text_size" />
+
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

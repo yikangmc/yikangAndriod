@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="70dp"
+    android:layout_height="40dp">
+
+
+    <TextView
+        android:id="@+id/lables_top_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:minHeight="10dp"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="运动健身"
+        android:textColor="#323232"
+        android:background="#dcdcdc"
+        android:textSize="12sp" />
+
+    <ImageView
+        android:id="@+id/lables_top_iv_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/yk_community_lable_editor_delect"
+        android:visibility="gone"
+        android:layout_gravity="right|top"/>
+
+</FrameLayout>

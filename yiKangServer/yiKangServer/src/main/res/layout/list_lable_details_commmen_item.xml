@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/item_bg02"
+    android:orientation="vertical"
+    android:paddingLeft="15dp"
+    android:paddingTop="25dp"
+    android:paddingRight="15dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <com.yikang.app.yikangserver.view.CircleImageView
+            android:id="@+id/lables_details_iv_user"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/yk_community_tab_recommend_user" />
+
+        <TextView
+            android:id="@+id/lables_details_tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text=""
+            android:textColor="#505050"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/lables_details_tv_zhicheng"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="8sp" />
+        <LinearLayout
+            android:id="@+id/lable_details_ll_support"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:layout_marginRight="0dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/lable_details_tv_support"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:drawableLeft="@drawable/yk_all_tab_support"
+                android:drawablePadding="4dp"
+                android:textSize="11sp"
+                android:textColor="#505050"
+                android:gravity="center_vertical" />
+
+            <TextView
+                android:id="@+id/homepage_wonderfulcontent_supportlike"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:drawableLeft="@drawable/likebtn"
+                android:drawablePadding="4dp"
+                android:textSize="11sp"
+                android:textColor="#505050"
+                android:gravity="center_vertical"
+                android:text=""
+                android:visibility="gone" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:orientation="horizontal"
+        android:paddingLeft="25dp">
+
+        <TextView
+            android:id="@+id/lables_details_tv_pushtime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="hhh"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center_vertical"
+            android:textColor="@color/homepage_title_right_text_color"
+            android:textSize="@dimen/common_text_size_middle_small" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:gravity="left"
+        android:orientation="horizontal"
+        android:paddingLeft="35dp">
+        <TextView
+            android:id="@+id/homepage_ll_wonderfulcontent_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:textColor="#656565"
+            android:textSize="13sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_arrow"
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:visibility="gone"
+        android:layout_marginLeft="50dp"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/arrow"/>
+    </LinearLayout>
+    <com.yikang.app.yikangserver.view.MyGridView
+        android:id="@+id/comment_lables_gridview"
+        android:layout_width="fill_parent"
+        android:paddingTop="8dp"
+        android:visibility="gone"
+        android:paddingBottom="8dp"
+        android:layout_marginLeft="35dp"
+        android:layout_height="wrap_content"
+        android:background="#e5e5e5"
+        android:numColumns="1"
+       />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="8dp"
+            android:background="@color/homepage_view_bg_color" />
+    </LinearLayout>
+
+
+</LinearLayout>

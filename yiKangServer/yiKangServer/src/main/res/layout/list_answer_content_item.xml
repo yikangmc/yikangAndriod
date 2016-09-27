@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/item_bg02"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/main_background_color"></LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:padding="5dp">
+            <TextView
+                android:id="@+id/lables_tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#515151"
+                android:textSize="15sp"/>
+            <ImageView
+                android:id="@+id/tv_pic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="3dp"
+                android:visibility="gone"
+                android:src="@drawable/yk_all_tab_placeholder_samll" />/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center_vertical">
+            <com.yikang.app.yikangserver.view.CircleImageView
+                android:id="@+id/lables_iv_userphoto"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:src="@drawable/yk_community_tab_recommend_user"/>
+
+            <TextView
+                android:id="@+id/lables_tv_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="8dp"
+                android:textColor="#656565"
+                android:textSize="12sp"/>
+            <TextView
+                android:id="@+id/lables_tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="提问于2016.05.09"
+                android:layout_marginLeft="20dp"
+                android:textColor="#797979"
+                android:textSize="10sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="right">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#797979"
+                    android:textSize="10dp"
+                    android:text="已获"/>
+                <TextView
+                    android:id="@+id/lables_tv_nums"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10dp"
+                    android:text="45"
+                    android:textColor="@color/red"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#797979"
+                    android:textSize="10dp"
+                    android:text="个回答"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

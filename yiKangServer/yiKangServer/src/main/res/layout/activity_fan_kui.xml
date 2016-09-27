@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:background="@color/main_background_color"
+    android:showDividers="middle">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/include_title_bar" />
+
+            <LinearLayout
+                android:id="@+id/ll_theme"
+                style="@style/style_common_item.linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/tv_theme"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:drawablePadding="10dp"
+                    android:background="@null"
+                    android:gravity="top|left"
+                    android:textCursorDrawable="@drawable/richtextedit_cursor_shape"
+                    android:hint="请输入遇到的问题或建议..."
+                    android:textColorHint="#969696"
+                    android:textColor="@color/common_text_grey"
+                    android:textSize="12sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:background="#ffffff">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textColor="#1F1F1F"
+                    android:text="联系方式"
+                    android:gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="12sp"/>
+                <EditText
+                    android:id="@+id/et_phone"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:hint="(选填)可填写您的电话,QQ,或邮箱等"
+                    android:textColorHint="#959595"
+                    android:textSize="12sp"
+                    android:textCursorDrawable="@drawable/richtextedit_cursor_shape"
+                    android:background="@null"
+                    android:gravity="center|left"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/common_text_grey"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="45dp"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:textColor="#B2B2B2"
+                android:text="您也可以加入佳佳康复意见反馈QQ群"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:textColor="#0faadd"
+                android:text="「515358171」"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:textColor="#B2B2B2"
+                android:text="留下你的疑问、意见和建议，小佳在那里洗耳恭听"/>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
